@@ -1,0 +1,5 @@
+Package: phoenix_tracker
+Title: Phoenix Tracker
+Version: 0.0.1
+Imports: bookdown, tidyverse
+Remotes: altaf-ali/phoenix_tracker

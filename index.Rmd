@@ -18,7 +18,7 @@ library(yaml)
 library(tidyverse)
 ```
 
-## LoadingDataset
+## Loading Dataset
 
 The `phoenix.R` script provides a function that simplifies downloading and loading the dataset. We set the start date to the beginning of the year and load the dataset. The `phoenix_load()` function downloads the dataset if necessary.
 

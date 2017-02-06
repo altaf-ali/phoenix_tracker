@@ -1,5 +1,5 @@
 Package: phoenix_tracker
 Title: Phoenix Tracker
 Version: 0.0.1
-Imports: bookdown, tidyverse, cshapes, countrycode, yaml, lubridate, broom, ggrepel
+Imports: bookdown, tidyverse, rgeos, cshapes, countrycode, yaml, lubridate, broom, ggrepel
 Remotes: altaf-ali/phoenix_tracker

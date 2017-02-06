@@ -1,0 +1,31 @@
+# Event Table
+
+```{r message=FALSE}
+library(plyr)
+library(yaml)
+library(tidyverse)
+library(DT)
+```
+
+## Loading Dataset
+
+Load Phoenix events.
+
+```{r message=FALSE, results='hide'}
+source('R/phoenix.R')
+
+config <- yaml.load_file("config.yml")
+
+events <- phoenix_load(config, "2017-01-01")
+```
+
+## Latest Events
+
+Show events reported on `r max(events$Date)`.
+
+```{r}
+events %>%
+  filter(Date == max(Date)) %>%
+  DT::datatable(selection = "single", options = list(scrollX = TRUE))
+```
+

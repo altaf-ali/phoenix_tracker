@@ -1,6 +1,6 @@
 rmd_files: [
   "index.Rmd",
-  "activity.Rmd"
-  #"event_table.Rmd"
+  "activity.Rmd",
+  "event_table.Rmd"
 ]
 

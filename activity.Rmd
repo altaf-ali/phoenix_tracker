@@ -1,0 +1,144 @@
+# Activity
+
+```{r message=FALSE}
+library(cshapes)
+library(countrycode)
+library(tidyverse)
+library(lubridate)
+library(broom)
+library(ggrepel)
+```
+
+## Loading Dataset
+
+Load Phoenix events and few other things we need for plotting.
+
+```{r message=FALSE, results='hide'}
+source('R/phoenix.R')
+
+config <- yaml.load_file("config.yml")
+
+events <- phoenix_load(config, "2017-01-01")
+
+country_centroids <- read_csv(config$google$centroids)
+
+world_map <- tidy(cshp(as.Date("2016-06-30")), region = "COWCODE")
+```
+
+Function for summarizing events. Return value contains a list of nodes and edges reprensenting dyadic events.
+
+```{r}
+get_event_summary <- function(events, centroids, period = 0) {
+  events <- events %>%
+    filter(Date >= (max(Date) - days(period))) %>%
+    filter(SourceActorRole == "GOV" & TargetActorRole == "GOV")
+  
+  nodes <- events %>%
+    dplyr::mutate(TargetActorEntity = ifelse(SourceActorEntity == TargetActorEntity, NA, TargetActorEntity)) %>%
+    gather(ActorType, ActorEntity, SourceActorEntity, TargetActorEntity) %>%
+    filter(!is.na(ActorEntity), !(ActorEntity == "")) %>%
+    group_by(ActorEntity) %>%
+    dplyr::summarize(EventCount = n()) %>%
+    dplyr::mutate(CountryCode = countrycode(ActorEntity, "iso3c", "cown"), EventCount) %>%
+    select(CountryCode, Country = ActorEntity, EventCount) %>%
+    left_join(centroids, by = "Country") %>%
+    arrange(desc(EventCount)) 
+  
+  edges <- events %>%
+    filter(!is.na(SourceActorEntity), !(SourceActorEntity == ""),
+           !is.na(TargetActorEntity), !(TargetActorEntity == ""),
+           SourceActorEntity != TargetActorEntity) %>%
+    rowwise() %>%
+    dplyr::mutate(Dyad = paste(sort(c(SourceActorEntity, TargetActorEntity)), collapse = "-")) %>%
+    ungroup() %>%
+    group_by(Dyad) %>%
+    dplyr::summarize(EventCount = n()) %>%
+    ungroup() %>%
+    separate(Dyad, c("SideA", "SideB"), "-", remove = FALSE) %>%
+    dplyr::mutate(CountryA = countrycode(SideA, "iso3c", "country.name"),
+           CountryB = countrycode(SideB, "iso3c", "country.name")) %>%
+    left_join(centroids, by = c("SideA" = "Country")) %>%
+    select(Dyad, SideA, SideB, CountryA, CountryB, EventCount, SideA_Latitude = Latitude, SideA_Longitude = Longitude) %>%
+    left_join(centroids, by = c("SideB" = "Country")) %>%
+    select(Dyad, SideA, SideB, CountryA, CountryB, EventCount, SideA_Latitude, SideA_Longitude, SideB_Latitude = Latitude, SideB_Longitude = Longitude) %>%
+    arrange(desc(EventCount))
+  
+  return(list(nodes = nodes, edges = edges))
+}
+```
+
+Function for plotting activity on a map.
+
+```{r}
+plot_activity <- function(map, event_summary) {
+  map <- map %>%
+    dplyr::mutate(id = as.numeric(id)) %>%
+    left_join(event_summary$nodes, by = c("id" = "CountryCode"))
+  
+  ggplot(map) +
+    geom_map(map = map, aes(map_id = id, fill = EventCount), color = "gray", size = 0.5) +
+    scale_fill_distiller(name = "Event Count", palette = "Blues", direction = 1, na.value = "white") +
+    expand_limits(x = map$long, y = map$lat) +
+    coord_cartesian() +
+    geom_point(aes(x = Longitude, y = Latitude), 
+               data = event_summary$nodes, 
+               size = 0.5, 
+               color = "navy") +
+    geom_curve(aes(x = SideA_Longitude,
+                   y = SideA_Latitude,
+                   xend = SideB_Longitude,
+                   yend = SideB_Latitude),
+               data = event_summary$edges,
+               size = 0.2,
+               alpha = 0.5,
+               color = "red") +
+    geom_text_repel(aes(x = Longitude, y = Latitude, label = CountryName), 
+                    data = head(event_summary$nodes, 10), 
+                    force = 0.1, 
+                    size = 3,
+                    fontface = "bold") +
+    theme_minimal() +
+    theme(legend.position = "bottom",
+          legend.key.width = unit(5, "line"),
+          axis.title = element_blank(),
+          axis.text = element_blank(),
+          panel.grid = element_blank())
+}
+```
+
+This function simply formats the top 10 rows from the dataset in a pretty table.
+
+```{r}
+show_top10 <- function(x) {
+  x %>%
+    head(n = 10) %>%
+    knitr::kable()
+}
+```
+
+## Most Active on `r max(events$Date)`
+
+```{r fig.width=8}
+event_summary <- get_event_summary(events, country_centroids)
+show_top10(select(event_summary$nodes, CountryName, EventCount))
+show_top10(select(event_summary$edges, CountryA, CountryB, EventCount))
+plot_activity(world_map, event_summary)
+```
+
+## Most Active in Last 7 Days
+
+```{r fig.width=8}
+event_summary <- get_event_summary(events, country_centroids, period = 7)
+show_top10(select(event_summary$nodes, CountryName, EventCount))
+show_top10(select(event_summary$edges, CountryA, CountryB, EventCount))
+plot_activity(world_map, event_summary)
+```
+
+## Most Active in Last 30 Days
+
+```{r fig.width=8}
+event_summary <- get_event_summary(events, country_centroids, period = 30)
+show_top10(select(event_summary$nodes, CountryName, EventCount))
+show_top10(select(event_summary$edges, CountryA, CountryB, EventCount))
+plot_activity(world_map, event_summary)
+```

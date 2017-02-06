@@ -1,0 +1,12 @@
+---
+phoenix:
+  path: ./data/phoenix
+
+google:
+  timeout: 10
+  max_requests: 25
+  centroids: ./data/google/country_centroids.csv
+
+mapbox:
+  attribution: Maps by <a href="http://www.mapbox.com/">Mapbox</a>
+  url_template: http://api.mapbox.com/styles/v1/altaf-ali/cil0aqtpw006fcbm0fxic0wrv/tiles/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiYWx0YWYtYWxpIiwiYSI6ImNpZ2wyODQ0eTAwODF2eG00Z2J4Z2I5Nm0ifQ.c5mBUcy3t2DXQeiRaKz7mw

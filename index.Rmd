@@ -6,7 +6,42 @@ github-repo: altaf-ali/phoenix_tracker
 
 # Introduction
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+This project analyzes event data from the [Phoenix Data Project](http://phoenixdata.org)
+
+## Getting Started
+
+Load the necessary packages. 
+
+```{r message=FALSE}
+library(yaml)
+library(tidyverse)
+```
+
+## Loading Phoenix Dataset
+
+The `phoenix.R` script provides a function that simplifies downloading and loading the dataset. We set the start date to the beginning of the year and load the dataset. The `phoenix_load()` function downloads the dataset if necessary.
+
+```{r message=FALSE, results='hide'}
+source('R/phoenix.R')
+
+config <- yaml.load_file("config.yml")
+
+events <- phoenix_load(config, start_date = "2017-01-01")
+```
+
+Let's see what's in the dataset
+
+```{r}
+str(events)
+```
+
+Show selected columns
+
+```{r}
+events %>%
+  select(Date, SourceActorFull, TargetActorFull, EventCode, LocationName) %>%
+  head()
+```
 
 
 ----

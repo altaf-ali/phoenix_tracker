@@ -1,9 +1,5 @@
-# install phoxy if not already installed
-if (!require(phoxy))
-  devtools::install_github("altaf-ali/phoxy")
-
-# update the dataset
+# load the dataset
 phoenix_load <- function(config, start_date = NULL) {
-  update_phoenix(config$phoenix$path, start_date = start_date)
-  return(ingest_phoenix(config$phoenix$path))
+  phoxy::update_phoenix(config$phoenix$path, start_date = start_date)
+  return(phoxy::ingest_phoenix(config$phoenix$path))
 }

@@ -19,11 +19,8 @@ Load Phoenix events and few other things we need for plotting.
 source('R/phoenix.R')
 
 config <- yaml.load_file("config.yml")
-
 events <- phoenix_load(config, "2017-01-01")
-
 country_centroids <- read_csv(config$google$centroids)
-
 world_map <- tidy(cshp(as.Date("2016-06-30")), region = "COWCODE")
 ```
 

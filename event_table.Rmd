@@ -15,7 +15,6 @@ Load Phoenix events.
 source('R/phoenix.R')
 
 config <- yaml.load_file("config.yml")
-
 events <- phoenix_load(config, "2017-01-01")
 ```
 

@@ -106,7 +106,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#getting-started"><i class="fa fa-check"></i><b>1.1</b> Getting Started</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#loading-phoenix-dataset"><i class="fa fa-check"></i><b>1.2</b> Loading Phoenix Dataset</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#loadingdataset"><i class="fa fa-check"></i><b>1.2</b> LoadingDataset</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="activity.html"><a href="activity.html"><i class="fa fa-check"></i><b>2</b> Activity</a><ul>
 <li class="chapter" data-level="2.1" data-path="activity.html"><a href="activity.html#loading-dataset"><i class="fa fa-check"></i><b>2.1</b> Loading Dataset</a></li>
@@ -148,13 +148,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="kw">library</span>(yaml)
 <span class="kw">library</span>(tidyverse)</code></pre></div>
 </div>
-<div id="loading-phoenix-dataset" class="section level2">
-<h2><span class="header-section-number">1.2</span> Loading Phoenix Dataset</h2>
+<div id="loadingdataset" class="section level2">
+<h2><span class="header-section-number">1.2</span> LoadingDataset</h2>
 <p>The <code>phoenix.R</code> script provides a function that simplifies downloading and loading the dataset. We set the start date to the beginning of the year and load the dataset. The <code>phoenix_load()</code> function downloads the dataset if necessary.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">source</span>(<span class="st">&#39;R/phoenix.R&#39;</span>)
 
 config &lt;-<span class="st"> </span><span class="kw">yaml.load_file</span>(<span class="st">&quot;config.yml&quot;</span>)
-
 events &lt;-<span class="st"> </span><span class="kw">phoenix_load</span>(config, <span class="dt">start_date =</span> <span class="st">&quot;2017-01-01&quot;</span>)</code></pre></div>
 <p>Let’s see what’s in the dataset</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(events)</code></pre></div>
@@ -197,7 +196,7 @@ events &lt;-<span class="st"> </span><span class="kw">phoenix_load</span>(config
 ## 5 2017-01-02             CHN             HKG       130       Beijing
 ## 6 2017-01-02       USAELIGOV          USAGOV       042</code></pre>
 <hr />
-<p><em>Last Updated: Feb 06, 2017 1:45 AM</em></p>
+<p><em>Last Updated: Feb 06, 2017 9:51 AM</em></p>
 
 </div>
 </div>

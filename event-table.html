@@ -106,7 +106,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#getting-started"><i class="fa fa-check"></i><b>1.1</b> Getting Started</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#loading-phoenix-dataset"><i class="fa fa-check"></i><b>1.2</b> Loading Phoenix Dataset</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#loadingdataset"><i class="fa fa-check"></i><b>1.2</b> LoadingDataset</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="activity.html"><a href="activity.html"><i class="fa fa-check"></i><b>2</b> Activity</a><ul>
 <li class="chapter" data-level="2.1" data-path="activity.html"><a href="activity.html#loading-dataset"><i class="fa fa-check"></i><b>2.1</b> Loading Dataset</a></li>
@@ -147,7 +147,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">source</span>(<span class="st">&#39;R/phoenix.R&#39;</span>)
 
 config &lt;-<span class="st"> </span><span class="kw">yaml.load_file</span>(<span class="st">&quot;config.yml&quot;</span>)
-
 events &lt;-<span class="st"> </span><span class="kw">phoenix_load</span>(config, <span class="st">&quot;2017-01-01&quot;</span>)</code></pre></div>
 </div>
 <div id="latest-events" class="section level2">

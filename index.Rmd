@@ -13,6 +13,7 @@ This project analyzes event data from the [Phoenix Data Project](http://phoenixd
 Load the necessary packages. 
 
 ```{r message=FALSE}
+library(plyr)
 library(yaml)
 library(tidyverse)
 ```

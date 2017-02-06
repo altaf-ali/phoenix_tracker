@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="index.html">
-
+<link rel="next" href="event-table.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -47,6 +47,11 @@
 
 
 
+<script src="libs/htmlwidgets-0.8/htmlwidgets.js"></script>
+<script src="libs/datatables-binding-0.2/datatables.js"></script>
+<link href="libs/dt-core-1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.12/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.12/js/jquery.dataTables.min.js"></script>
 
 
 <style type="text/css">
@@ -109,6 +114,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.3" data-path="activity.html"><a href="activity.html#most-active-in-last-7-days"><i class="fa fa-check"></i><b>2.3</b> Most Active in Last 7 Days</a></li>
 <li class="chapter" data-level="2.4" data-path="activity.html"><a href="activity.html#most-active-in-last-30-days"><i class="fa fa-check"></i><b>2.4</b> Most Active in Last 30 Days</a></li>
 </ul></li>
+<li class="chapter" data-level="3" data-path="event-table.html"><a href="event-table.html"><i class="fa fa-check"></i><b>3</b> Event Table</a><ul>
+<li class="chapter" data-level="3.1" data-path="event-table.html"><a href="event-table.html#loading-dataset-1"><i class="fa fa-check"></i><b>3.1</b> Loading Dataset</a></li>
+<li class="chapter" data-level="3.2" data-path="event-table.html"><a href="event-table.html#latest-events"><i class="fa fa-check"></i><b>3.2</b> Latest Events</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -128,7 +137,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="activity" class="section level1">
 <h1><span class="header-section-number">2</span> Activity</h1>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(cshapes)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(plyr)
+<span class="kw">library</span>(cshapes)
 <span class="kw">library</span>(countrycode)
 <span class="kw">library</span>(tidyverse)
 <span class="kw">library</span>(lubridate)
@@ -154,12 +164,12 @@ world_map &lt;-<span class="st"> </span><span class="kw">tidy</span>(<span class
 <span class="st">    </span><span class="kw">filter</span>(SourceActorRole ==<span class="st"> &quot;GOV&quot;</span> &amp;<span class="st"> </span>TargetActorRole ==<span class="st"> &quot;GOV&quot;</span>)
   
   nodes &lt;-<span class="st"> </span>events %&gt;%
-<span class="st">    </span>dplyr::<span class="kw">mutate</span>(<span class="dt">TargetActorEntity =</span> <span class="kw">ifelse</span>(SourceActorEntity ==<span class="st"> </span>TargetActorEntity, <span class="ot">NA</span>, TargetActorEntity)) %&gt;%
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">TargetActorEntity =</span> <span class="kw">ifelse</span>(SourceActorEntity ==<span class="st"> </span>TargetActorEntity, <span class="ot">NA</span>, TargetActorEntity)) %&gt;%
 <span class="st">    </span><span class="kw">gather</span>(ActorType, ActorEntity, SourceActorEntity, TargetActorEntity) %&gt;%
 <span class="st">    </span><span class="kw">filter</span>(!<span class="kw">is.na</span>(ActorEntity), !(ActorEntity ==<span class="st"> &quot;&quot;</span>)) %&gt;%
 <span class="st">    </span><span class="kw">group_by</span>(ActorEntity) %&gt;%
-<span class="st">    </span>dplyr::<span class="kw">summarize</span>(<span class="dt">EventCount =</span> <span class="kw">n</span>()) %&gt;%
-<span class="st">    </span>dplyr::<span class="kw">mutate</span>(<span class="dt">CountryCode =</span> <span class="kw">countrycode</span>(ActorEntity, <span class="st">&quot;iso3c&quot;</span>, <span class="st">&quot;cown&quot;</span>), EventCount) %&gt;%
+<span class="st">    </span><span class="kw">summarize</span>(<span class="dt">EventCount =</span> <span class="kw">n</span>()) %&gt;%
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">CountryCode =</span> <span class="kw">countrycode</span>(ActorEntity, <span class="st">&quot;iso3c&quot;</span>, <span class="st">&quot;cown&quot;</span>), EventCount) %&gt;%
 <span class="st">    </span><span class="kw">select</span>(CountryCode, <span class="dt">Country =</span> ActorEntity, EventCount) %&gt;%
 <span class="st">    </span><span class="kw">left_join</span>(centroids, <span class="dt">by =</span> <span class="st">&quot;Country&quot;</span>) %&gt;%
 <span class="st">    </span><span class="kw">arrange</span>(<span class="kw">desc</span>(EventCount)) 
@@ -169,13 +179,13 @@ world_map &lt;-<span class="st"> </span><span class="kw">tidy</span>(<span class
            !<span class="kw">is.na</span>(TargetActorEntity), !(TargetActorEntity ==<span class="st"> &quot;&quot;</span>),
            SourceActorEntity !=<span class="st"> </span>TargetActorEntity) %&gt;%
 <span class="st">    </span><span class="kw">rowwise</span>() %&gt;%
-<span class="st">    </span>dplyr::<span class="kw">mutate</span>(<span class="dt">Dyad =</span> <span class="kw">paste</span>(<span class="kw">sort</span>(<span class="kw">c</span>(SourceActorEntity, TargetActorEntity)), <span class="dt">collapse =</span> <span class="st">&quot;-&quot;</span>)) %&gt;%
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">Dyad =</span> <span class="kw">paste</span>(<span class="kw">sort</span>(<span class="kw">c</span>(SourceActorEntity, TargetActorEntity)), <span class="dt">collapse =</span> <span class="st">&quot;-&quot;</span>)) %&gt;%
 <span class="st">    </span><span class="kw">ungroup</span>() %&gt;%
 <span class="st">    </span><span class="kw">group_by</span>(Dyad) %&gt;%
-<span class="st">    </span>dplyr::<span class="kw">summarize</span>(<span class="dt">EventCount =</span> <span class="kw">n</span>()) %&gt;%
+<span class="st">    </span><span class="kw">summarize</span>(<span class="dt">EventCount =</span> <span class="kw">n</span>()) %&gt;%
 <span class="st">    </span><span class="kw">ungroup</span>() %&gt;%
 <span class="st">    </span><span class="kw">separate</span>(Dyad, <span class="kw">c</span>(<span class="st">&quot;SideA&quot;</span>, <span class="st">&quot;SideB&quot;</span>), <span class="st">&quot;-&quot;</span>, <span class="dt">remove =</span> <span class="ot">FALSE</span>) %&gt;%
-<span class="st">    </span>dplyr::<span class="kw">mutate</span>(<span class="dt">CountryA =</span> <span class="kw">countrycode</span>(SideA, <span class="st">&quot;iso3c&quot;</span>, <span class="st">&quot;country.name&quot;</span>),
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">CountryA =</span> <span class="kw">countrycode</span>(SideA, <span class="st">&quot;iso3c&quot;</span>, <span class="st">&quot;country.name&quot;</span>),
            <span class="dt">CountryB =</span> <span class="kw">countrycode</span>(SideB, <span class="st">&quot;iso3c&quot;</span>, <span class="st">&quot;country.name&quot;</span>)) %&gt;%
 <span class="st">    </span><span class="kw">left_join</span>(centroids, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;SideA&quot;</span> =<span class="st"> &quot;Country&quot;</span>)) %&gt;%
 <span class="st">    </span><span class="kw">select</span>(Dyad, SideA, SideB, CountryA, CountryB, EventCount, <span class="dt">SideA_Latitude =</span> Latitude, <span class="dt">SideA_Longitude =</span> Longitude) %&gt;%
@@ -188,7 +198,7 @@ world_map &lt;-<span class="st"> </span><span class="kw">tidy</span>(<span class
 <p>Function for plotting activity on a map.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">plot_activity &lt;-<span class="st"> </span>function(map, event_summary) {
   map &lt;-<span class="st"> </span>map %&gt;%
-<span class="st">    </span>dplyr::<span class="kw">mutate</span>(<span class="dt">id =</span> <span class="kw">as.numeric</span>(id)) %&gt;%
+<span class="st">    </span><span class="kw">mutate</span>(<span class="dt">id =</span> <span class="kw">as.numeric</span>(id)) %&gt;%
 <span class="st">    </span><span class="kw">left_join</span>(event_summary$nodes, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;id&quot;</span> =<span class="st"> &quot;CountryCode&quot;</span>))
   
   <span class="kw">ggplot</span>(map) +
@@ -198,8 +208,7 @@ world_map &lt;-<span class="st"> </span><span class="kw">tidy</span>(<span class
 <span class="st">    </span><span class="kw">coord_cartesian</span>() +
 <span class="st">    </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Longitude, <span class="dt">y =</span> Latitude), 
                <span class="dt">data =</span> event_summary$nodes, 
-               <span class="dt">size =</span> <span class="fl">0.5</span>, 
-               <span class="dt">color =</span> <span class="st">&quot;navy&quot;</span>) +
+               <span class="dt">size =</span> <span class="fl">0.5</span>) +
 <span class="st">    </span><span class="kw">geom_curve</span>(<span class="kw">aes</span>(<span class="dt">x =</span> SideA_Longitude,
                    <span class="dt">y =</span> SideA_Latitude,
                    <span class="dt">xend =</span> SideB_Longitude,
@@ -532,8 +541,8 @@ world_map &lt;-<span class="st"> </span><span class="kw">tidy</span>(<span class
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="event-table.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
 
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>

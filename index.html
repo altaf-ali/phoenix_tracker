@@ -47,6 +47,11 @@
 
 
 
+<script src="libs/htmlwidgets-0.8/htmlwidgets.js"></script>
+<script src="libs/datatables-binding-0.2/datatables.js"></script>
+<link href="libs/dt-core-1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.12/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.12/js/jquery.dataTables.min.js"></script>
 
 
 <style type="text/css">
@@ -109,6 +114,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.3" data-path="activity.html"><a href="activity.html#most-active-in-last-7-days"><i class="fa fa-check"></i><b>2.3</b> Most Active in Last 7 Days</a></li>
 <li class="chapter" data-level="2.4" data-path="activity.html"><a href="activity.html#most-active-in-last-30-days"><i class="fa fa-check"></i><b>2.4</b> Most Active in Last 30 Days</a></li>
 </ul></li>
+<li class="chapter" data-level="3" data-path="event-table.html"><a href="event-table.html"><i class="fa fa-check"></i><b>3</b> Event Table</a><ul>
+<li class="chapter" data-level="3.1" data-path="event-table.html"><a href="event-table.html#loading-dataset-1"><i class="fa fa-check"></i><b>3.1</b> Loading Dataset</a></li>
+<li class="chapter" data-level="3.2" data-path="event-table.html"><a href="event-table.html#latest-events"><i class="fa fa-check"></i><b>3.2</b> Latest Events</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -135,7 +144,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="getting-started" class="section level2">
 <h2><span class="header-section-number">1.1</span> Getting Started</h2>
 <p>Load the necessary packages.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(yaml)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(plyr)
+<span class="kw">library</span>(yaml)
 <span class="kw">library</span>(tidyverse)</code></pre></div>
 </div>
 <div id="loading-phoenix-dataset" class="section level2">
@@ -187,7 +197,7 @@ events &lt;-<span class="st"> </span><span class="kw">phoenix_load</span>(config
 ## 5 2017-01-02             CHN             HKG       130       Beijing
 ## 6 2017-01-02       USAELIGOV          USAGOV       042</code></pre>
 <hr />
-<p><em>Last Updated: Feb 06, 2017 1:13 AM</em></p>
+<p><em>Last Updated: Feb 06, 2017 1:32 AM</em></p>
 
 </div>
 </div>

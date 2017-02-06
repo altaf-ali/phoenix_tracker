@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Phoenix Tracker</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Phoenix Tracker">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Phoenix Tracker" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="altaf-ali/phoenix_tracker" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Phoenix Tracker" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="activity.html">
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-0.8/htmlwidgets.js"></script>
+<script src="libs/datatables-binding-0.2/datatables.js"></script>
+<link href="libs/dt-core-1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.12/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.12/js/jquery.dataTables.min.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="css/readthedocs.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#getting-started"><i class="fa fa-check"></i><b>1.1</b> Getting Started</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#loading-phoenix-dataset"><i class="fa fa-check"></i><b>1.2</b> Loading Phoenix Dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="activity.html"><a href="activity.html"><i class="fa fa-check"></i><b>2</b> Activity</a><ul>
+<li class="chapter" data-level="2.1" data-path="activity.html"><a href="activity.html#loading-dataset"><i class="fa fa-check"></i><b>2.1</b> Loading Dataset</a></li>
+<li class="chapter" data-level="2.2" data-path="activity.html"><a href="activity.html#most-active-on-2017-02-06"><i class="fa fa-check"></i><b>2.2</b> Most Active on 2017-02-06</a></li>
+<li class="chapter" data-level="2.3" data-path="activity.html"><a href="activity.html#most-active-in-last-7-days"><i class="fa fa-check"></i><b>2.3</b> Most Active in Last 7 Days</a></li>
+<li class="chapter" data-level="2.4" data-path="activity.html"><a href="activity.html#most-active-in-last-30-days"><i class="fa fa-check"></i><b>2.4</b> Most Active in Last 30 Days</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="event-table.html"><a href="event-table.html"><i class="fa fa-check"></i><b>3</b> Event Table</a><ul>
+<li class="chapter" data-level="3.1" data-path="event-table.html"><a href="event-table.html#loading-dataset-1"><i class="fa fa-check"></i><b>3.1</b> Loading Dataset</a></li>
+<li class="chapter" data-level="3.2" data-path="event-table.html"><a href="event-table.html#latest-events"><i class="fa fa-check"></i><b>3.2</b> Latest Events</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Phoenix Tracker</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="event-table" class="section level1">
+<h1><span class="header-section-number">3</span> Event Table</h1>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(plyr)
+<span class="kw">library</span>(yaml)
+<span class="kw">library</span>(tidyverse)
+<span class="kw">library</span>(DT)</code></pre></div>
+<div id="loading-dataset-1" class="section level2">
+<h2><span class="header-section-number">3.1</span> Loading Dataset</h2>
+<p>Load Phoenix events.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">source</span>(<span class="st">&#39;R/phoenix.R&#39;</span>)
+
+config &lt;-<span class="st"> </span><span class="kw">yaml.load_file</span>(<span class="st">&quot;config.yml&quot;</span>)
+
+events &lt;-<span class="st"> </span><span class="kw">phoenix_load</span>(config, <span class="st">&quot;2017-01-01&quot;</span>)</code></pre></div>
+</div>
+<div id="latest-events" class="section level2">
+<h2><span class="header-section-number">3.2</span> Latest Events</h2>
+<p>Show events reported on 2017-02-06.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">events %&gt;%
+<span class="st">  </span><span class="kw">filter</span>(Date ==<span class="st"> </span><span class="kw">max</span>(Date)) %&gt;%
+<span class="st">  </span>DT::<span class="kw">datatable</span>(<span class="dt">selection =</span> <span class="st">&quot;single&quot;</span>, <span class="dt">options =</span> <span class="kw">list</span>(<span class="dt">scrollX =</span> <span class="ot">TRUE</span>))</code></pre></div>
+<div id="htmlwidget-c7ef36a62044620361de" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c7ef36a62044620361de">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49"],["2970077_v1.3.0","2970089_v1.3.0","2970099_v1.3.0","2970184_v1.3.0","2970220_v1.3.0","2970225_v1.3.0","2970233_v1.3.0","2970245_v1.3.0","2970270_v1.3.0","2970290_v1.3.0","2970295_v1.3.0","2970335_v1.3.0","2970418_v1.3.0","2970429_v1.3.0","2970449_v1.3.0","2970517_v1.3.0","2970544_v1.3.0","2970619_v1.3.0","2970682_v1.3.0","2970743_v1.3.0","2970764_v1.3.0","2971000_v1.3.0","2971040_v1.3.0","2971074_v1.3.0","2971090_v1.3.0","2971213_v1.3.0","2971217_v1.3.0","2971290_v1.3.0","2971295_v1.3.0","2971399_v1.3.0","2971408_v1.3.0","2971420_v1.3.0","2971474_v1.3.0","2971577_v1.3.0","2971628_v1.3.0","2971775_v1.3.0","2971780_v1.3.0","2971842_v1.3.0","2971874_v1.3.0","2971895_v1.3.0","2971968_v1.3.0","2971997_v1.3.0","2972014_v1.3.0","2972019_v1.3.0","2972082_v1.3.0","2972130_v1.3.0","2972186_v1.3.0","2972215_v1.3.0","2972246_v1.3.0"],["2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06","2017-02-06"],[2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017],[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],[6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6],["RUS","USAGOVLEG","PHL","USAGOVLEG","USAGOVLEG","IRQELIGOV","USAGOV","DEUGOV","JPN","UKRMILMED","NZL","KORGOV","PRK","IGOUNOGOV","IRQELIGOV","USA","IRQ","AFG","USAJUD","SYR","USA","USA","CHNENV","USA","DEUGOV","USAGOV","USAMIL","IMGMUSISI","USA","KORCRMBUSCOP","INDUAF","BGDGOV","USAMILMED","SYRREF","RUS","USA","CHN","USAJUD","PAK","USA","JPN","USAGOV","MYSGOVHLH","USAGOVGOVAGR","PHLGOV","NGOHLHIRC","IRQELIGOV","USASPY","JPN"],["RUS","USA","PHL","USA","USA","IRQ","USA","DEU","JPN","UKR","NZL","KOR","PRK","IGO","IRQ","USA","IRQ","AFG","USA","SYR","USA","USA","CHN","USA","DEU","USA","USA","IMG","USA","KOR","IND","BGD","USA","SYR","RUS","USA","CHN","USA","PAK","USA","JPN","USA","MYS","USA","PHL","NGO","IRQ","USA","JPN"],["","GOV","","GOV","GOV","","GOV","GOV","","MIL","","GOV","","","","","","","JUD","","","","","","GOV","GOV","MIL","","","CRM","","GOV","MIL","","","","","JUD","","","","GOV","GOV","GOV","GOV","","","SPY",""],["","LEG","","LEG","LEG","ELI;GOV","","","","MED","","","","UNO;GOV","ELI;GOV","","","","","","","","ENV","","","","","MUS;ISI","","BUS;COP","UAF","","MED","REF","","","","","","","","","HLH","GOV;AGR","","HLH;IRC","ELI;GOV","",""],["USA","NGOHRIAMN","NGOHRIAMN","ISR","NGOHRIAMN","USA","NGOHLHIRC","DEU","PRKCVL","MED","INDEDU","PHLGOV","USAGOV","USA","INDGOV","IRQ","USA","PAK","IRN","IMGMUSISI","IRQ","RUSGOV","MED","SOM","TUR","RUSGOV","CHNBUS","SYR","SYR","PHLCOP","IMGMUSISI","BGD","USAGOV","DEU","MED","IRN","USAMIL","IRQ","AFG","SDN","PRK","USA","IGOUNOJUDICJGOV","CHNBUS","USAGOVLEG","USAGOV","IND","RUS","PRKCVL"],["USA","NGO","NGO","ISR","NGO","USA","NGO","DEU","PRK","","IND","PHL","USA","USA","IND","IRQ","USA","PAK","IRN","IMG","IRQ","RUS","","SOM","TUR","RUS","CHN","SYR","SYR","PHL","IMG","BGD","USA","DEU","","IRN","USA","IRQ","AFG","SDN","PRK","USA","IGO","CHN","USA","USA","IND","RUS","PRK"],["","","","","","","","","CVL","","EDU","GOV","GOV","","GOV","","","","","","","GOV","","","","GOV","BUS","","","COP","","","GOV","","","","MIL","","","","","","","BUS","GOV","GOV","","","CVL"],["","HRI;AMN","HRI;AMN","","HRI;AMN","","HLH;IRC","","","","","","","","","","","","","MUS;ISI","","","","","","","","","","","MUS;ISI","","","","","","","","","","","","UNO;JUD;ICJ;GOV","","LEG","","","",""],["072","010","010","010","090","010","042","050","010","010","075","010","010","010","010","081","042","190","010","190","043","010","010","081","050","010","030","190","081","020","040","051","120","173","173","081","111","010","190","081","170","061","010","170","0214","043","010","110","080"],["07","01","01","01","09","01","04","05","01","01","07","01","01","01","01","08","04","19","01","19","04","01","01","08","05","01","03","19","08","02","04","05","12","17","17","08","11","01","19","08","17","06","01","17","02","04","01","11","08"],["2","0","0","0","3","0","1","1","0","0","2","0","0","0","0","2","1","4","0","4","1","0","0","2","1","0","1","4","2","0","1","1","3","4","4","2","3","0","4","2","4","2","0","4","0","1","0","3","2"],[8.3,0,0,0,-2,0,1.9,3.5,0,0,7,0,0,0,0,5,1.9,-10,0,-10,2.8,0,0,5,3.5,0,4,-10,5,3,1,3.4,-4,-5,-5,5,-2,0,-10,5,-7,6.4,0,-7,3.4,2.8,0,-2,5],["TERROR,2","SECURITY_SERVICES,1","","","SECURITY_SERVICES,1","","","","","","STUDENTS,1","","","","","REFUGEES,2","","","","","","","","REFUGEES,2","","","","","REFUGEES,2","SECURITY_SERVICES,1;ORGANIZED_CRIME,1","TERROR,1","","","REFUGEES,1","","REFUGEES,2","","","","REFUGEES,2","","","","","","","","",""],[60,null,14.6042,null,null,-42.40749,-28.11694,39.91987,35.6895,null,-36.86667,13,null,null,null,39.76,null,33,null,33,null,null,35,39.76,39.91987,39.76,35,33,39.76,36.5,17.38405,24,null,51.5,39.76,39.76,39.9075,null,33,39.76,40,null,3.39545,null,55.95,-28.11694,28.97155,55.75222,35.6895],[100,null,120.9822,null,null,173.68132,153.46584,32.85427,139.69171,null,174.76667,122,null,null,null,-98.5,null,66,null,44,null,null,105,-98.5,32.85427,-98.5,105,44,-98.5,127.75,78.45636,90,null,10.5,-98.5,-98.5,116.39723,null,66,-98.5,127,null,101.77915,null,8.5,153.46584,77.71934,37.61556,139.69171],["Russian Federation","","Manila","","","Kaikoura","Palm Beach","Ankara","Tokyo","","Auckland","Republic of the Philippines","","","","United States","","Islamic Republic of Afghanistan","","Republic of Iraq","","","People’s Republic of China","United States","Ankara","United States","People’s Republic of China","Republic of Iraq","United States","Republic of Korea","Hyderabad","Bangladesh","","Federal Republic of Germany","United States","United States","Beijing","","Islamic Republic of Afghanistan","United States","Democratic People’s Republic of Korea","","Genting Highlands","","Skjern","Palm Beach","Meerut","Moscow","Tokyo"],["","","National Capital Region","","","","State of Queensland","","Tōkyō-to","","Auckland","","","","","","","","","","","","","","","","","","","","Telangana","","","","","","Beijing Shi","","","","","","Negeri Sembilan","","Region Midtjylland","State of Queensland","Uttar Pradesh","Moskva","Tōkyō-to"],["RUS","","PHL","","","NZL","AUS","TUR","JPN","","NZL","PHL","","","","USA","","AFG","","IRQ","","","CHN","USA","TUR","USA","CHN","IRQ","USA","KOR","IND","BGD","","DEU","USA","USA","CHN","","AFG","USA","PRK","","MYS","","DNK","AUS","IND","RUS","JPN"],["58973c8d5a61b70001f3d9ad_1;5897612866533300010f81b7_3","58975273f9aed40001f38334_0","5897685466533300010f81bc_0","589785a6c6faa00001197a28_5","58975273f9aed40001f38334_0","5897b8b4b4f9e10001046870_2","5897b8d35a61b70001f3dae9_0","5897942f8571f80001259b92_0","5897686507cfa00001824b18_0","58976854e4348300013b2560_4","58979430e580470001f22a2a_0","589759b5c6faa000011979a3_1","5897aa23e580470001f22a6d_0","5897b8bb172dca00014ca8d7_1","589777235ab9c00001f0289a_0;58977e63c6faa00001197a13_0","5897a2e45a61b70001f3daa9_5;5897a2e4d57de600015af334_5","5897a2e0b4f9e10001046842_1","589759d4f9aed40001f38350_0","5897a2e45a61b70001f3daa9_1;5897a2e4d57de600015af334_1","58978cf4e580470001f22a21_3","5897a2e0b4f9e10001046842_1","58973c8d5a61b70001f3d9ad_0;5897b8afd57de600015af367_0","589768645ab9c00001f02870_2","5897a2e45a61b70001f3daa9_5;5897a2e4d57de600015af334_5","5897942f8571f80001259b92_0","5897612866533300010f81b7_0","589768645ab9c00001f02870_2","58978cf4e580470001f22a21_3","5897a2e45a61b70001f3daa9_5;5897a2e4d57de600015af334_5","58976854dc04020001356173_3","5897a2d83934d4000145cad7_0","58977e63dc040200013561b8_3","58976854e580470001f229a8_6","58978cf4172dca00014ca878_0","589759d4dc04020001356152_0","5897a2e45a61b70001f3daa9_5;5897a2e4d57de600015af334_5","589768645ab9c00001f02870_0","5897a2e45a61b70001f3daa9_1;5897a2e4d57de600015af334_1","589759d4f9aed40001f38350_0","5897a2e45a61b70001f3daa9_5;5897a2e4d57de600015af334_5","5897686507cfa00001824b18_4","589759d43934d4000145ca28_2","5897b17dd57de600015af358_4","589768645ab9c00001f02870_1","5897687c5ab9c00001f0287b_0","5897b8d35a61b70001f3dae9_0","5897a2d88571f80001259bae_2","5897612866533300010f81b7_1;5897b8afd57de600015af367_2","5897686507cfa00001824b18_0"],["http://www.nzherald.co.nz/world/news/article.cfm?c_id=2&amp;objectid=11795325&amp;ref=rss;http://www.shanghaidaily.com/world/US-not-innocent-as-Putin-defended/shdaily.shtml","http://manilastandard.net/news/-main-stories/top-stories/228594/senate-probes-pay-for-kill-tale.html","http://www.philstar.com/headlines/2017/02/06/1669510/amnesty-lnternational-naive-and-stupid","http://www.thestar.com.my/news/world/2017/02/06/judges-across-us-to-weigh-challenges-to-trump-travel-ban/","http://manilastandard.net/news/-main-stories/top-stories/228594/senate-probes-pay-for-kill-tale.html","http://www.nzherald.co.nz/nz/news/article.cfm?c_id=1&amp;objectid=11795504&amp;ref=rss","http://news.xinhuanet.com/english/2017-02/06/c_136033534.htm","http://www.hurriyetdailynews.com/merkel-erdogan-and-islamist-terrorism.aspx?pageID=238&amp;nid=109361&amp;NewsCatID=406","http://app.yonhapnews.co.kr/YNA/Basic/SNS/r.aspx?c=AEN20170205004200315&amp;source=rss","http://www.chinapost.com.tw/international/europe/2017/02/06/490893/Fragile-ceasefire.htm","http://www.nzherald.co.nz/nz/news/article.cfm?c_id=1&amp;objectid=11795398&amp;ref=rss","http://www.philstar.com/headlines/2017/02/06/1669500/foreign-businessmen-fear-their-safety","http://app.yonhapnews.co.kr/YNA/Basic/SNS/r.aspx?c=AEN20170206000200315&amp;source=rss","http://english.chosun.com/site/data/html_dir/2017/02/06/2017020600622.html","http://www.thehindu.com/elections/uttar-pradesh-2017/%E2%80%98BJP-storm-will-blow-away-Akhilesh%E2%80%99/article17197382.ece?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication;http://www.thehindu.com/news/national/%E2%80%98BJP-storm-will-blow-away-Akhilesh%E2%80%99/article17198671.ece?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication","http://www.bangkokpost.com/news/world/1193377/travellers-arrive-in-us-after-ban-is-lifted;http://www.bangkokpost.com/news/world/1193401/travellers-arrive-in-us-after-ban-is-lifted","http://www.nzherald.co.nz/world/news/article.cfm?c_id=2&amp;objectid=11795447&amp;ref=rss","http://www.taipeitimes.com/News/world/archives/2017/02/06/2003664455","http://www.bangkokpost.com/news/world/1193377/travellers-arrive-in-us-after-ban-is-lifted;http://www.bangkokpost.com/news/world/1193401/travellers-arrive-in-us-after-ban-is-lifted","http://www.thestar.com.my/news/world/2017/02/06/us-coalition-jets-bomb-islamic-stateheld-town-near-euphrates-dam/","http://www.nzherald.co.nz/world/news/article.cfm?c_id=2&amp;objectid=11795447&amp;ref=rss","http://www.nzherald.co.nz/world/news/article.cfm?c_id=2&amp;objectid=11795325&amp;ref=rss;http://www.philstar.com/world/2017/02/06/1669595/asked-about-putin-trump-says-us-isnt-so-innocent","http://www.chinapost.com.tw/china/business/2017/02/06/490887/Beijing-accuses.htm","http://www.bangkokpost.com/news/world/1193377/travellers-arrive-in-us-after-ban-is-lifted;http://www.bangkokpost.com/news/world/1193401/travellers-arrive-in-us-after-ban-is-lifted","http://www.hurriyetdailynews.com/merkel-erdogan-and-islamist-terrorism.aspx?pageID=238&amp;nid=109361&amp;NewsCatID=406","http://www.shanghaidaily.com/world/US-not-innocent-as-Putin-defended/shdaily.shtml","http://www.chinapost.com.tw/china/business/2017/02/06/490887/Beijing-accuses.htm","http://www.thestar.com.my/news/world/2017/02/06/us-coalition-jets-bomb-islamic-stateheld-town-near-euphrates-dam/","http://www.bangkokpost.com/news/world/1193377/travellers-arrive-in-us-after-ban-is-lifted;http://www.bangkokpost.com/news/world/1193401/travellers-arrive-in-us-after-ban-is-lifted","http://www.philstar.com/headlines/2017/02/06/1669516/duterte-korean-mafia-active-cebu","http://www.telegraphindia.com/1170206/jsp/nation/story_134275.jsp","http://www.thehindu.com/news/national/Delhi-Dhaka-push-Ganga-basin-project/article17198680.ece?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication","http://www.chinapost.com.tw/international/americas/2017/02/06/490871/US-military.htm","http://www.nzherald.co.nz/world/news/article.cfm?c_id=2&amp;objectid=11795397&amp;ref=rss","http://www.taipeitimes.com/News/world/archives/2017/02/06/2003664461","http://www.bangkokpost.com/news/world/1193377/travellers-arrive-in-us-after-ban-is-lifted;http://www.bangkokpost.com/news/world/1193401/travellers-arrive-in-us-after-ban-is-lifted","http://www.chinapost.com.tw/china/business/2017/02/06/490887/Beijing-accuses.htm","http://www.bangkokpost.com/news/world/1193377/travellers-arrive-in-us-after-ban-is-lifted;http://www.bangkokpost.com/news/world/1193401/travellers-arrive-in-us-after-ban-is-lifted","http://www.taipeitimes.com/News/world/archives/2017/02/06/2003664455","http://www.bangkokpost.com/news/world/1193377/travellers-arrive-in-us-after-ban-is-lifted;http://www.bangkokpost.com/news/world/1193401/travellers-arrive-in-us-after-ban-is-lifted","http://app.yonhapnews.co.kr/YNA/Basic/SNS/r.aspx?c=AEN20170205004200315&amp;source=rss","http://www.taipeitimes.com/News/world/archives/2017/02/06/2003664458","http://www.thestar.com.my/news/nation/2017/02/06/reezal-well-reclaim-island-without-offending-spore/","http://www.chinapost.com.tw/china/business/2017/02/06/490887/Beijing-accuses.htm","https://newsinfo.inquirer.net/868512/smartmatic-warehouse-ceiling-collapses-probe-sought","http://news.xinhuanet.com/english/2017-02/06/c_136033534.htm","http://www.telegraphindia.com/1170206/jsp/nation/story_134270.jsp","http://www.shanghaidaily.com/world/US-not-innocent-as-Putin-defended/shdaily.shtml;http://www.philstar.com/world/2017/02/06/1669595/asked-about-putin-trump-says-us-isnt-so-innocent","http://app.yonhapnews.co.kr/YNA/Basic/SNS/r.aspx?c=AEN20170205004200315&amp;source=rss"],["nzherald_world;shanghai_world","phil_manilastandard","philstar_headlines","malstar_world","phil_manilastandard","nxherald_national","xinhua","hurriyet","skorea_yonhap_sk","chinapost_international","nxherald_national","philstar_headlines","skorea_yonhap_sk","skorea_chosun","hindu_nat;hindu_nat","thailand_bankokpost;thailand_bankokpost","nzherald_world","taipeitimes_world","thailand_bankokpost;thailand_bankokpost","malstar_world","nzherald_world","nzherald_world;philstar_world","chinapost_china","thailand_bankokpost;thailand_bankokpost","hurriyet","shanghai_world","chinapost_china","malstar_world","thailand_bankokpost;thailand_bankokpost","philstar_headlines","india_telegraph_nation","hindu_nat","chinapost_international","nzherald_world","taipeitimes_world","thailand_bankokpost;thailand_bankokpost","chinapost_china","thailand_bankokpost;thailand_bankokpost","taipeitimes_world","thailand_bankokpost;thailand_bankokpost","skorea_yonhap_sk","taipeitimes_world","malstar_nat","chinapost_china","phil_inquirer","xinhua","india_telegraph_nation","shanghai_world;philstar_world","skorea_yonhap_sk"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> \u003c/th>\n      <th>EventID\u003c/th>\n      <th>Date\u003c/th>\n      <th>Year\u003c/th>\n      <th>Month\u003c/th>\n      <th>Day\u003c/th>\n      <th>SourceActorFull\u003c/th>\n      <th>SourceActorEntity\u003c/th>\n      <th>SourceActorRole\u003c/th>\n      <th>SourceActorAttribute\u003c/th>\n      <th>TargetActorFull\u003c/th>\n      <th>TargetActorEntity\u003c/th>\n      <th>TargetActorRole\u003c/th>\n      <th>TargetActorAttribute\u003c/th>\n      <th>EventCode\u003c/th>\n      <th>EventRootCode\u003c/th>\n      <th>PentaClass\u003c/th>\n      <th>GoldsteinScore\u003c/th>\n      <th>Issues\u003c/th>\n      <th>Lat\u003c/th>\n      <th>Lon\u003c/th>\n      <th>LocationName\u003c/th>\n      <th>StateName\u003c/th>\n      <th>CountryCode\u003c/th>\n      <th>SentenceID\u003c/th>\n      <th>URLs\u003c/th>\n      <th>NewsSources\u003c/th>\n    \u003c/tr>\n  \u003c/thead>\n\u003c/table>","options":{"scrollX":true,"columnDefs":[{"className":"dt-right","targets":[3,4,5,17,19,20]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="activity.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,5 +1,3 @@
-library(yaml)
-
 # install phoxy if not already installed
 if (!require(phoxy))
   devtools::install_github("altaf-ali/phoxy")

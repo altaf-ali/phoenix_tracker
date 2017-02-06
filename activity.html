@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Phoenix Tracker</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Phoenix Tracker">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Phoenix Tracker" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="altaf-ali/phoenix_tracker" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Phoenix Tracker" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="css/readthedocs.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#getting-started"><i class="fa fa-check"></i><b>1.1</b> Getting Started</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#loading-phoenix-dataset"><i class="fa fa-check"></i><b>1.2</b> Loading Phoenix Dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="activity.html"><a href="activity.html"><i class="fa fa-check"></i><b>2</b> Activity</a><ul>
+<li class="chapter" data-level="2.1" data-path="activity.html"><a href="activity.html#loading-dataset"><i class="fa fa-check"></i><b>2.1</b> Loading Dataset</a></li>
+<li class="chapter" data-level="2.2" data-path="activity.html"><a href="activity.html#most-active-on-2017-02-06"><i class="fa fa-check"></i><b>2.2</b> Most Active on 2017-02-06</a></li>
+<li class="chapter" data-level="2.3" data-path="activity.html"><a href="activity.html#most-active-in-last-7-days"><i class="fa fa-check"></i><b>2.3</b> Most Active in Last 7 Days</a></li>
+<li class="chapter" data-level="2.4" data-path="activity.html"><a href="activity.html#most-active-in-last-30-days"><i class="fa fa-check"></i><b>2.4</b> Most Active in Last 30 Days</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Phoenix Tracker</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="activity" class="section level1">
+<h1><span class="header-section-number">2</span> Activity</h1>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(cshapes)
+<span class="kw">library</span>(countrycode)
+<span class="kw">library</span>(tidyverse)
+<span class="kw">library</span>(lubridate)
+<span class="kw">library</span>(broom)
+<span class="kw">library</span>(yaml)
+<span class="kw">library</span>(ggrepel)</code></pre></div>
+<div id="loading-dataset" class="section level2">
+<h2><span class="header-section-number">2.1</span> Loading Dataset</h2>
+<p>Load Phoenix events and few other things we need for plotting.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">source</span>(<span class="st">&#39;R/phoenix.R&#39;</span>)
+
+config &lt;-<span class="st"> </span><span class="kw">yaml.load_file</span>(<span class="st">&quot;config.yml&quot;</span>)
+
+events &lt;-<span class="st"> </span><span class="kw">phoenix_load</span>(config, <span class="st">&quot;2017-01-01&quot;</span>)
+
+country_centroids &lt;-<span class="st"> </span><span class="kw">read_csv</span>(config$google$centroids)
+
+world_map &lt;-<span class="st"> </span><span class="kw">tidy</span>(<span class="kw">cshp</span>(<span class="kw">as.Date</span>(<span class="st">&quot;2016-06-30&quot;</span>)), <span class="dt">region =</span> <span class="st">&quot;COWCODE&quot;</span>)</code></pre></div>
+<p>Function for summarizing events. Return value contains a list of nodes and edges reprensenting dyadic events.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">get_event_summary &lt;-<span class="st"> </span>function(events, centroids, <span class="dt">period =</span> <span class="dv">0</span>) {
+  events &lt;-<span class="st"> </span>events %&gt;%
+<span class="st">    </span><span class="kw">filter</span>(Date &gt;=<span class="st"> </span>(<span class="kw">max</span>(Date) -<span class="st"> </span><span class="kw">days</span>(period))) %&gt;%
+<span class="st">    </span><span class="kw">filter</span>(SourceActorRole ==<span class="st"> &quot;GOV&quot;</span> &amp;<span class="st"> </span>TargetActorRole ==<span class="st"> &quot;GOV&quot;</span>)
+  
+  nodes &lt;-<span class="st"> </span>events %&gt;%
+<span class="st">    </span>dplyr::<span class="kw">mutate</span>(<span class="dt">TargetActorEntity =</span> <span class="kw">ifelse</span>(SourceActorEntity ==<span class="st"> </span>TargetActorEntity, <span class="ot">NA</span>, TargetActorEntity)) %&gt;%
+<span class="st">    </span><span class="kw">gather</span>(ActorType, ActorEntity, SourceActorEntity, TargetActorEntity) %&gt;%
+<span class="st">    </span><span class="kw">filter</span>(!<span class="kw">is.na</span>(ActorEntity), !(ActorEntity ==<span class="st"> &quot;&quot;</span>)) %&gt;%
+<span class="st">    </span><span class="kw">group_by</span>(ActorEntity) %&gt;%
+<span class="st">    </span>dplyr::<span class="kw">summarize</span>(<span class="dt">EventCount =</span> <span class="kw">n</span>()) %&gt;%
+<span class="st">    </span>dplyr::<span class="kw">mutate</span>(<span class="dt">CountryCode =</span> <span class="kw">countrycode</span>(ActorEntity, <span class="st">&quot;iso3c&quot;</span>, <span class="st">&quot;cown&quot;</span>), EventCount) %&gt;%
+<span class="st">    </span><span class="kw">select</span>(CountryCode, <span class="dt">Country =</span> ActorEntity, EventCount) %&gt;%
+<span class="st">    </span><span class="kw">left_join</span>(centroids, <span class="dt">by =</span> <span class="st">&quot;Country&quot;</span>) %&gt;%
+<span class="st">    </span><span class="kw">arrange</span>(<span class="kw">desc</span>(EventCount)) 
+  
+  edges &lt;-<span class="st"> </span>events %&gt;%
+<span class="st">    </span><span class="kw">filter</span>(!<span class="kw">is.na</span>(SourceActorEntity), !(SourceActorEntity ==<span class="st"> &quot;&quot;</span>),
+           !<span class="kw">is.na</span>(TargetActorEntity), !(TargetActorEntity ==<span class="st"> &quot;&quot;</span>),
+           SourceActorEntity !=<span class="st"> </span>TargetActorEntity) %&gt;%
+<span class="st">    </span><span class="kw">rowwise</span>() %&gt;%
+<span class="st">    </span>dplyr::<span class="kw">mutate</span>(<span class="dt">Dyad =</span> <span class="kw">paste</span>(<span class="kw">sort</span>(<span class="kw">c</span>(SourceActorEntity, TargetActorEntity)), <span class="dt">collapse =</span> <span class="st">&quot;-&quot;</span>)) %&gt;%
+<span class="st">    </span><span class="kw">ungroup</span>() %&gt;%
+<span class="st">    </span><span class="kw">group_by</span>(Dyad) %&gt;%
+<span class="st">    </span>dplyr::<span class="kw">summarize</span>(<span class="dt">EventCount =</span> <span class="kw">n</span>()) %&gt;%
+<span class="st">    </span><span class="kw">ungroup</span>() %&gt;%
+<span class="st">    </span><span class="kw">separate</span>(Dyad, <span class="kw">c</span>(<span class="st">&quot;SideA&quot;</span>, <span class="st">&quot;SideB&quot;</span>), <span class="st">&quot;-&quot;</span>, <span class="dt">remove =</span> <span class="ot">FALSE</span>) %&gt;%
+<span class="st">    </span>dplyr::<span class="kw">mutate</span>(<span class="dt">CountryA =</span> <span class="kw">countrycode</span>(SideA, <span class="st">&quot;iso3c&quot;</span>, <span class="st">&quot;country.name&quot;</span>),
+           <span class="dt">CountryB =</span> <span class="kw">countrycode</span>(SideB, <span class="st">&quot;iso3c&quot;</span>, <span class="st">&quot;country.name&quot;</span>)) %&gt;%
+<span class="st">    </span><span class="kw">left_join</span>(centroids, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;SideA&quot;</span> =<span class="st"> &quot;Country&quot;</span>)) %&gt;%
+<span class="st">    </span><span class="kw">select</span>(Dyad, SideA, SideB, CountryA, CountryB, EventCount, <span class="dt">SideA_Latitude =</span> Latitude, <span class="dt">SideA_Longitude =</span> Longitude) %&gt;%
+<span class="st">    </span><span class="kw">left_join</span>(centroids, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;SideB&quot;</span> =<span class="st"> &quot;Country&quot;</span>)) %&gt;%
+<span class="st">    </span><span class="kw">select</span>(Dyad, SideA, SideB, CountryA, CountryB, EventCount, SideA_Latitude, SideA_Longitude, <span class="dt">SideB_Latitude =</span> Latitude, <span class="dt">SideB_Longitude =</span> Longitude) %&gt;%
+<span class="st">    </span><span class="kw">arrange</span>(<span class="kw">desc</span>(EventCount))
+  
+  <span class="kw">return</span>(<span class="kw">list</span>(<span class="dt">nodes =</span> nodes, <span class="dt">edges =</span> edges))
+}</code></pre></div>
+<p>Function for plotting activity on a map.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">plot_activity &lt;-<span class="st"> </span>function(map, event_summary) {
+  map &lt;-<span class="st"> </span>map %&gt;%
+<span class="st">    </span>dplyr::<span class="kw">mutate</span>(<span class="dt">id =</span> <span class="kw">as.numeric</span>(id)) %&gt;%
+<span class="st">    </span><span class="kw">left_join</span>(event_summary$nodes, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;id&quot;</span> =<span class="st"> &quot;CountryCode&quot;</span>))
+  
+  <span class="kw">ggplot</span>(map) +
+<span class="st">    </span><span class="kw">geom_map</span>(<span class="dt">map =</span> map, <span class="kw">aes</span>(<span class="dt">map_id =</span> id, <span class="dt">fill =</span> EventCount), <span class="dt">color =</span> <span class="st">&quot;gray&quot;</span>, <span class="dt">size =</span> <span class="fl">0.5</span>) +
+<span class="st">    </span><span class="kw">scale_fill_distiller</span>(<span class="dt">name =</span> <span class="st">&quot;Event Count&quot;</span>, <span class="dt">palette =</span> <span class="st">&quot;Blues&quot;</span>, <span class="dt">direction =</span> <span class="dv">1</span>, <span class="dt">na.value =</span> <span class="st">&quot;white&quot;</span>) +
+<span class="st">    </span><span class="kw">expand_limits</span>(<span class="dt">x =</span> map$long, <span class="dt">y =</span> map$lat) +
+<span class="st">    </span><span class="kw">coord_cartesian</span>() +
+<span class="st">    </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Longitude, <span class="dt">y =</span> Latitude), 
+               <span class="dt">data =</span> event_summary$nodes, 
+               <span class="dt">size =</span> <span class="fl">0.5</span>, 
+               <span class="dt">color =</span> <span class="st">&quot;navy&quot;</span>) +
+<span class="st">    </span><span class="kw">geom_curve</span>(<span class="kw">aes</span>(<span class="dt">x =</span> SideA_Longitude,
+                   <span class="dt">y =</span> SideA_Latitude,
+                   <span class="dt">xend =</span> SideB_Longitude,
+                   <span class="dt">yend =</span> SideB_Latitude),
+               <span class="dt">data =</span> event_summary$edges,
+               <span class="dt">size =</span> <span class="fl">0.2</span>,
+               <span class="dt">alpha =</span> <span class="fl">0.5</span>,
+               <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>) +
+<span class="st">    </span><span class="kw">geom_text_repel</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Longitude, <span class="dt">y =</span> Latitude, <span class="dt">label =</span> CountryName), 
+                    <span class="dt">data =</span> <span class="kw">head</span>(event_summary$nodes, <span class="dv">10</span>), 
+                    <span class="dt">force =</span> <span class="fl">0.1</span>, 
+                    <span class="dt">size =</span> <span class="dv">3</span>,
+                    <span class="dt">fontface =</span> <span class="st">&quot;bold&quot;</span>) +
+<span class="st">    </span><span class="kw">theme_minimal</span>() +
+<span class="st">    </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;bottom&quot;</span>,
+          <span class="dt">legend.key.width =</span> <span class="kw">unit</span>(<span class="dv">5</span>, <span class="st">&quot;line&quot;</span>),
+          <span class="dt">axis.title =</span> <span class="kw">element_blank</span>(),
+          <span class="dt">axis.text =</span> <span class="kw">element_blank</span>(),
+          <span class="dt">panel.grid =</span> <span class="kw">element_blank</span>())
+}</code></pre></div>
+<p>This function simply formats the top 10 rows from the dataset in a pretty table.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">show_top10 &lt;-<span class="st"> </span>function(x) {
+  x %&gt;%
+<span class="st">    </span><span class="kw">head</span>(<span class="dt">n =</span> <span class="dv">10</span>) %&gt;%
+<span class="st">    </span>knitr::<span class="kw">kable</span>()
+}</code></pre></div>
+</div>
+<div id="most-active-on-2017-02-06" class="section level2">
+<h2><span class="header-section-number">2.2</span> Most Active on 2017-02-06</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">event_summary &lt;-<span class="st"> </span><span class="kw">get_event_summary</span>(events, country_centroids)
+<span class="kw">show_top10</span>(<span class="kw">select</span>(event_summary$nodes, CountryName, EventCount))</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">CountryName</th>
+<th align="right">EventCount</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Philippines</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">United States</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="left">Korea, Republic of</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Russian Federation</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">show_top10</span>(<span class="kw">select</span>(event_summary$edges, CountryA, CountryB, EventCount))</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">CountryA</th>
+<th align="left">CountryB</th>
+<th align="right">EventCount</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Korea, Republic of</td>
+<td align="left">Philippines</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Philippines</td>
+<td align="left">United States</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">Russian Federation</td>
+<td align="left">United States</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot_activity</span>(world_map, event_summary)</code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-10-1.png" width="768" /></p>
+</div>
+<div id="most-active-in-last-7-days" class="section level2">
+<h2><span class="header-section-number">2.3</span> Most Active in Last 7 Days</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">event_summary &lt;-<span class="st"> </span><span class="kw">get_event_summary</span>(events, country_centroids, <span class="dt">period =</span> <span class="dv">7</span>)
+<span class="kw">show_top10</span>(<span class="kw">select</span>(event_summary$nodes, CountryName, EventCount))</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">CountryName</th>
+<th align="right">EventCount</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">United States</td>
+<td align="right">525</td>
+</tr>
+<tr class="even">
+<td align="left">Russian Federation</td>
+<td align="right">113</td>
+</tr>
+<tr class="odd">
+<td align="left">United Kingdom</td>
+<td align="right">81</td>
+</tr>
+<tr class="even">
+<td align="left">Israel</td>
+<td align="right">77</td>
+</tr>
+<tr class="odd">
+<td align="left">Germany</td>
+<td align="right">76</td>
+</tr>
+<tr class="even">
+<td align="left">India</td>
+<td align="right">57</td>
+</tr>
+<tr class="odd">
+<td align="left">Iran, Islamic Republic of</td>
+<td align="right">51</td>
+</tr>
+<tr class="even">
+<td align="left">Turkey</td>
+<td align="right">42</td>
+</tr>
+<tr class="odd">
+<td align="left">Mexico</td>
+<td align="right">37</td>
+</tr>
+<tr class="even">
+<td align="left">Ukraine</td>
+<td align="right">33</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">show_top10</span>(<span class="kw">select</span>(event_summary$edges, CountryA, CountryB, EventCount))</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">CountryA</th>
+<th align="left">CountryB</th>
+<th align="right">EventCount</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Iran, Islamic Republic of</td>
+<td align="left">United States</td>
+<td align="right">43</td>
+</tr>
+<tr class="even">
+<td align="left">United Kingdom</td>
+<td align="left">United States</td>
+<td align="right">35</td>
+</tr>
+<tr class="odd">
+<td align="left">Germany</td>
+<td align="left">Turkey</td>
+<td align="right">34</td>
+</tr>
+<tr class="even">
+<td align="left">Israel</td>
+<td align="left">United States</td>
+<td align="right">34</td>
+</tr>
+<tr class="odd">
+<td align="left">Russian Federation</td>
+<td align="left">United States</td>
+<td align="right">33</td>
+</tr>
+<tr class="even">
+<td align="left">Korea, Republic of</td>
+<td align="left">United States</td>
+<td align="right">24</td>
+</tr>
+<tr class="odd">
+<td align="left">Australia</td>
+<td align="left">United States</td>
+<td align="right">22</td>
+</tr>
+<tr class="even">
+<td align="left">India</td>
+<td align="left">United States</td>
+<td align="right">20</td>
+</tr>
+<tr class="odd">
+<td align="left">Mexico</td>
+<td align="left">United States</td>
+<td align="right">19</td>
+</tr>
+<tr class="even">
+<td align="left">United Kingdom</td>
+<td align="left">Israel</td>
+<td align="right">17</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot_activity</span>(world_map, event_summary)</code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-11-1.png" width="768" /></p>
+</div>
+<div id="most-active-in-last-30-days" class="section level2">
+<h2><span class="header-section-number">2.4</span> Most Active in Last 30 Days</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">event_summary &lt;-<span class="st"> </span><span class="kw">get_event_summary</span>(events, country_centroids, <span class="dt">period =</span> <span class="dv">30</span>)
+<span class="kw">show_top10</span>(<span class="kw">select</span>(event_summary$nodes, CountryName, EventCount))</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">CountryName</th>
+<th align="right">EventCount</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">United States</td>
+<td align="right">2167</td>
+</tr>
+<tr class="even">
+<td align="left">United Kingdom</td>
+<td align="right">407</td>
+</tr>
+<tr class="odd">
+<td align="left">Russian Federation</td>
+<td align="right">404</td>
+</tr>
+<tr class="even">
+<td align="left">Israel</td>
+<td align="right">243</td>
+</tr>
+<tr class="odd">
+<td align="left">Germany</td>
+<td align="right">236</td>
+</tr>
+<tr class="even">
+<td align="left">Iran, Islamic Republic of</td>
+<td align="right">197</td>
+</tr>
+<tr class="odd">
+<td align="left">China</td>
+<td align="right">186</td>
+</tr>
+<tr class="even">
+<td align="left">India</td>
+<td align="right">177</td>
+</tr>
+<tr class="odd">
+<td align="left">Mexico</td>
+<td align="right">161</td>
+</tr>
+<tr class="even">
+<td align="left">Turkey</td>
+<td align="right">143</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">show_top10</span>(<span class="kw">select</span>(event_summary$edges, CountryA, CountryB, EventCount))</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">CountryA</th>
+<th align="left">CountryB</th>
+<th align="right">EventCount</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Russian Federation</td>
+<td align="left">United States</td>
+<td align="right">224</td>
+</tr>
+<tr class="even">
+<td align="left">United Kingdom</td>
+<td align="left">United States</td>
+<td align="right">188</td>
+</tr>
+<tr class="odd">
+<td align="left">Israel</td>
+<td align="left">United States</td>
+<td align="right">152</td>
+</tr>
+<tr class="even">
+<td align="left">Mexico</td>
+<td align="left">United States</td>
+<td align="right">111</td>
+</tr>
+<tr class="odd">
+<td align="left">Iran, Islamic Republic of</td>
+<td align="left">United States</td>
+<td align="right">109</td>
+</tr>
+<tr class="even">
+<td align="left">India</td>
+<td align="left">United States</td>
+<td align="right">78</td>
+</tr>
+<tr class="odd">
+<td align="left">Germany</td>
+<td align="left">United States</td>
+<td align="right">54</td>
+</tr>
+<tr class="even">
+<td align="left">Germany</td>
+<td align="left">France</td>
+<td align="right">44</td>
+</tr>
+<tr class="odd">
+<td align="left">Germany</td>
+<td align="left">Turkey</td>
+<td align="right">41</td>
+</tr>
+<tr class="even">
+<td align="left">United Kingdom</td>
+<td align="left">Turkey</td>
+<td align="right">40</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot_activity</span>(world_map, event_summary)</code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-12-1.png" width="768" /></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

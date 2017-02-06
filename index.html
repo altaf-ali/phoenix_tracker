@@ -32,7 +32,7 @@
   
   
 
-
+<link rel="next" href="activity.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -49,6 +49,43 @@
 
 
 
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
 
 <link rel="stylesheet" href="css/readthedocs.css" type="text/css" />
 </head>
@@ -62,7 +99,16 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="index.html"><a href="#introduction"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#getting-started"><i class="fa fa-check"></i><b>1.1</b> Getting Started</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#loading-phoenix-dataset"><i class="fa fa-check"></i><b>1.2</b> Loading Phoenix Dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="activity.html"><a href="activity.html"><i class="fa fa-check"></i><b>2</b> Activity</a><ul>
+<li class="chapter" data-level="2.1" data-path="activity.html"><a href="activity.html#loading-dataset"><i class="fa fa-check"></i><b>2.1</b> Loading Dataset</a></li>
+<li class="chapter" data-level="2.2" data-path="activity.html"><a href="activity.html#most-active-on-2017-02-06"><i class="fa fa-check"></i><b>2.2</b> Most Active on 2017-02-06</a></li>
+<li class="chapter" data-level="2.3" data-path="activity.html"><a href="activity.html#most-active-in-last-7-days"><i class="fa fa-check"></i><b>2.3</b> Most Active in Last 7 Days</a></li>
+<li class="chapter" data-level="2.4" data-path="activity.html"><a href="activity.html#most-active-in-last-30-days"><i class="fa fa-check"></i><b>2.4</b> Most Active in Last 30 Days</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -85,10 +131,65 @@
 </div>
 <div id="introduction" class="section level1">
 <h1><span class="header-section-number">1</span> Introduction</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<hr />
-<p><em>Last Updated: Feb 01, 2017 2:12 PM</em></p>
+<p>This project analyzes event data from the <a href="http://phoenixdata.org">Phoenix Data Project</a></p>
+<div id="getting-started" class="section level2">
+<h2><span class="header-section-number">1.1</span> Getting Started</h2>
+<p>Load the necessary packages.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(yaml)
+<span class="kw">library</span>(tidyverse)</code></pre></div>
+</div>
+<div id="loading-phoenix-dataset" class="section level2">
+<h2><span class="header-section-number">1.2</span> Loading Phoenix Dataset</h2>
+<p>The <code>phoenix.R</code> script provides a function that simplifies downloading and loading the dataset. We set the start date to the beginning of the year and load the dataset. The <code>phoenix_load()</code> function downloads the dataset if necessary.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">source</span>(<span class="st">&#39;R/phoenix.R&#39;</span>)
 
+config &lt;-<span class="st"> </span><span class="kw">yaml.load_file</span>(<span class="st">&quot;config.yml&quot;</span>)
+
+events &lt;-<span class="st"> </span><span class="kw">phoenix_load</span>(config, <span class="dt">start_date =</span> <span class="st">&quot;2017-01-01&quot;</span>)</code></pre></div>
+<p>Let’s see what’s in the dataset</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(events)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    104356 obs. of  26 variables:
+##  $ EventID             : chr  &quot;2867898_v1.3.0&quot; &quot;2867899_v1.3.0&quot; &quot;2867900_v1.3.0&quot; &quot;2867901_v1.3.0&quot; ...
+##  $ Date                : Date, format: &quot;2017-01-02&quot; &quot;2016-12-23&quot; ...
+##  $ Year                : int  2017 2016 2016 2017 2017 2017 2017 2017 2017 2017 ...
+##  $ Month               : int  1 12 12 1 1 1 1 1 1 1 ...
+##  $ Day                 : int  2 23 29 2 2 2 2 1 1 2 ...
+##  $ SourceActorFull     : chr  &quot;COG&quot; &quot;MNCCHE&quot; &quot;IRN&quot; &quot;DEU&quot; ...
+##  $ SourceActorEntity   : chr  &quot;COG&quot; &quot;MNC&quot; &quot;IRN&quot; &quot;DEU&quot; ...
+##  $ SourceActorRole     : chr  &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; ...
+##  $ SourceActorAttribute: chr  &quot;&quot; &quot;CHE&quot; &quot;&quot; &quot;&quot; ...
+##  $ TargetActorFull     : chr  &quot;MED&quot; &quot;USAGOV&quot; &quot;SYR&quot; &quot;GBR&quot; ...
+##  $ TargetActorEntity   : chr  &quot;&quot; &quot;USA&quot; &quot;SYR&quot; &quot;GBR&quot; ...
+##  $ TargetActorRole     : chr  &quot;&quot; &quot;GOV&quot; &quot;&quot; &quot;&quot; ...
+##  $ TargetActorAttribute: chr  &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; ...
+##  $ EventCode           : chr  &quot;010&quot; &quot;010&quot; &quot;010&quot; &quot;042&quot; ...
+##  $ EventRootCode       : chr  &quot;01&quot; &quot;01&quot; &quot;01&quot; &quot;04&quot; ...
+##  $ PentaClass          : chr  &quot;0&quot; &quot;0&quot; &quot;0&quot; &quot;1&quot; ...
+##  $ GoldsteinScore      : num  0 0 0 1.9 -4.4 1.9 0 1 1.9 0 ...
+##  $ Issues              : chr  &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; ...
+##  $ Lat                 : num  NA 39.8 55.8 51.5 39.9 ...
+##  $ Lon                 : num  NA -98.5 37.616 -0.126 116.397 ...
+##  $ LocationName        : chr  &quot;&quot; &quot;United States&quot; &quot;Moscow&quot; &quot;London&quot; ...
+##  $ StateName           : chr  &quot;&quot; &quot;&quot; &quot;Moskva&quot; &quot;England&quot; ...
+##  $ CountryCode         : chr  &quot;&quot; &quot;USA&quot; &quot;RUS&quot; &quot;GBR&quot; ...
+##  $ SentenceID          : chr  &quot;586a9d7beaae1f0001eec49c_1&quot; &quot;5869ac06dc0402000134e7ef_0&quot; &quot;5869ac72d57de600015a7951_1&quot; &quot;586a3e29172dca00014c31b9_2;586a2f7fe580470001f1b3d6_2;586a36dfc6faa00001190301_3&quot; ...
+##  $ URLs                : chr  &quot;http://www.nation.co.ke/news/africa/DR-Congo-set-for-talks-on-implementing-crisis-deal/1066-3504894-k0ud9b/index.html&quot; &quot;http://www.thelocal.ch/20161223/swiss-bank-to-pay-billions-to-settle-securities-disputes&quot; &quot;http://www.jpost.com/Middle-East/Syrian-army-says-countrywide-ceasefire-to-start-midnight-Thursday-476890&quot; &quot;https://in.news.yahoo.com/china-launches-first-freight-train-london-113004033.html;http://www.shanghaidaily.com/nation/China-la&quot;| __truncated__ ...
+##  $ NewsSources         : chr  &quot;kenya_nation&quot; &quot;local_switzerland&quot; &quot;jpost_me&quot; &quot;yahoo_india;shanghai_national;india_mint_econpol&quot; ...</code></pre>
+<p>Show selected columns</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">events %&gt;%
+<span class="st">  </span><span class="kw">select</span>(Date, SourceActorFull, TargetActorFull, EventCode, LocationName) %&gt;%
+<span class="st">  </span><span class="kw">head</span>()</code></pre></div>
+<pre><code>##         Date SourceActorFull TargetActorFull EventCode  LocationName
+## 1 2017-01-02             COG             MED       010              
+## 2 2016-12-23          MNCCHE          USAGOV       010 United States
+## 3 2016-12-29             IRN             SYR       010        Moscow
+## 4 2017-01-02             DEU             GBR       042        London
+## 5 2017-01-02             CHN             HKG       130       Beijing
+## 6 2017-01-02       USAELIGOV          USAGOV       042</code></pre>
+<hr />
+<p><em>Last Updated: Feb 06, 2017 1:13 AM</em></p>
+
+</div>
 </div>
             </section>
 
@@ -96,7 +197,7 @@
         </div>
       </div>
 
-
+<a href="activity.html" class="navigation navigation-next navigation-unique" aria-label="Next page""><i class="fa fa-angle-right"></i></a>
 
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>

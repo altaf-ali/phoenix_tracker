@@ -110,7 +110,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="2" data-path="activity.html"><a href="activity.html"><i class="fa fa-check"></i><b>2</b> Activity</a><ul>
 <li class="chapter" data-level="2.1" data-path="activity.html"><a href="activity.html#loading-dataset-1"><i class="fa fa-check"></i><b>2.1</b> Loading Dataset</a></li>
-<li class="chapter" data-level="2.2" data-path="activity.html"><a href="activity.html#most-active-on-2017-02-06"><i class="fa fa-check"></i><b>2.2</b> Most Active on 2017-02-06</a></li>
+<li class="chapter" data-level="2.2" data-path="activity.html"><a href="activity.html#most-active-on-2017-02-07"><i class="fa fa-check"></i><b>2.2</b> Most Active on 2017-02-07</a></li>
 <li class="chapter" data-level="2.3" data-path="activity.html"><a href="activity.html#most-active-in-last-7-days"><i class="fa fa-check"></i><b>2.3</b> Most Active in Last 7 Days</a></li>
 <li class="chapter" data-level="2.4" data-path="activity.html"><a href="activity.html#most-active-in-last-30-days"><i class="fa fa-check"></i><b>2.4</b> Most Active in Last 30 Days</a></li>
 </ul></li>
@@ -233,8 +233,8 @@ world_map &lt;-<span class="st"> </span><span class="kw">tidy</span>(<span class
 <span class="st">    </span>knitr::<span class="kw">kable</span>()
 }</code></pre></div>
 </div>
-<div id="most-active-on-2017-02-06" class="section level2">
-<h2><span class="header-section-number">2.2</span> Most Active on 2017-02-06</h2>
+<div id="most-active-on-2017-02-07" class="section level2">
+<h2><span class="header-section-number">2.2</span> Most Active on 2017-02-07</h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">event_summary &lt;-<span class="st"> </span><span class="kw">get_event_summary</span>(events, country_centroids)
 <span class="kw">show_top10</span>(<span class="kw">select</span>(event_summary$nodes, CountryName, EventCount))</code></pre></div>
 <table>
@@ -246,15 +246,15 @@ world_map &lt;-<span class="st"> </span><span class="kw">tidy</span>(<span class
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Philippines</td>
-<td align="right">2</td>
+<td align="left">United States</td>
+<td align="right">3</td>
 </tr>
 <tr class="even">
-<td align="left">United States</td>
-<td align="right">2</td>
+<td align="left">India</td>
+<td align="right">1</td>
 </tr>
 <tr class="odd">
-<td align="left">Korea, Republic of</td>
+<td align="left">Korea, Democratic People’s Republic of</td>
 <td align="right">1</td>
 </tr>
 <tr class="even">
@@ -274,12 +274,12 @@ world_map &lt;-<span class="st"> </span><span class="kw">tidy</span>(<span class
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Republic of Korea</td>
-<td align="left">Philippines</td>
+<td align="left">India</td>
+<td align="left">United States of America</td>
 <td align="right">1</td>
 </tr>
 <tr class="even">
-<td align="left">Philippines</td>
+<td align="left">Democratic People’s Republic of Korea</td>
 <td align="left">United States of America</td>
 <td align="right">1</td>
 </tr>
@@ -296,7 +296,7 @@ world_map &lt;-<span class="st"> </span><span class="kw">tidy</span>(<span class
 <div id="most-active-in-last-7-days" class="section level2">
 <h2><span class="header-section-number">2.3</span> Most Active in Last 7 Days</h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">event_summary &lt;-<span class="st"> </span><span class="kw">get_event_summary</span>(events, country_centroids, <span class="dt">period =</span> <span class="dv">7</span>)</code></pre></div>
-<pre><code>## Warning in countrycode(c(&quot;ARM&quot;, &quot;AUS&quot;, &quot;AZE&quot;, &quot;BEL&quot;, &quot;BLR&quot;, &quot;BTN&quot;, &quot;CAN&quot;, : Some values were not matched unambiguously: HKG, PSE</code></pre>
+<pre><code>## Warning in countrycode(c(&quot;AFG&quot;, &quot;ARM&quot;, &quot;AUS&quot;, &quot;AZE&quot;, &quot;BEL&quot;, &quot;BGD&quot;, &quot;BLR&quot;, : Some values were not matched unambiguously: HKG, PSE</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">show_top10</span>(<span class="kw">select</span>(event_summary$nodes, CountryName, EventCount))</code></pre></div>
 <table>
 <thead>
@@ -308,35 +308,35 @@ world_map &lt;-<span class="st"> </span><span class="kw">tidy</span>(<span class
 <tbody>
 <tr class="odd">
 <td align="left">United States</td>
-<td align="right">525</td>
+<td align="right">486</td>
 </tr>
 <tr class="even">
 <td align="left">Russian Federation</td>
-<td align="right">113</td>
+<td align="right">121</td>
 </tr>
 <tr class="odd">
-<td align="left">United Kingdom</td>
-<td align="right">81</td>
+<td align="left">Israel</td>
+<td align="right">96</td>
 </tr>
 <tr class="even">
-<td align="left">Israel</td>
-<td align="right">77</td>
+<td align="left">United Kingdom</td>
+<td align="right">84</td>
 </tr>
 <tr class="odd">
 <td align="left">Germany</td>
-<td align="right">76</td>
+<td align="right">77</td>
 </tr>
 <tr class="even">
 <td align="left">India</td>
-<td align="right">57</td>
+<td align="right">52</td>
 </tr>
 <tr class="odd">
 <td align="left">Iran, Islamic Republic of</td>
-<td align="right">51</td>
+<td align="right">52</td>
 </tr>
 <tr class="even">
 <td align="left">Turkey</td>
-<td align="right">42</td>
+<td align="right">47</td>
 </tr>
 <tr class="odd">
 <td align="left">Mexico</td>
@@ -361,37 +361,37 @@ world_map &lt;-<span class="st"> </span><span class="kw">tidy</span>(<span class
 <tr class="odd">
 <td align="left">Iran (Islamic Republic of)</td>
 <td align="left">United States of America</td>
-<td align="right">43</td>
+<td align="right">39</td>
 </tr>
 <tr class="even">
-<td align="left">United Kingdom of Great Britain and Northern Ireland</td>
-<td align="left">United States of America</td>
-<td align="right">35</td>
-</tr>
-<tr class="odd">
 <td align="left">Germany</td>
 <td align="left">Turkey</td>
-<td align="right">34</td>
-</tr>
-<tr class="even">
-<td align="left">Israel</td>
-<td align="left">United States of America</td>
-<td align="right">34</td>
+<td align="right">38</td>
 </tr>
 <tr class="odd">
 <td align="left">Russian Federation</td>
 <td align="left">United States of America</td>
-<td align="right">33</td>
+<td align="right">38</td>
 </tr>
 <tr class="even">
-<td align="left">Republic of Korea</td>
+<td align="left">Israel</td>
+<td align="left">United States of America</td>
+<td align="right">33</td>
+</tr>
+<tr class="odd">
+<td align="left">United Kingdom of Great Britain and Northern Ireland</td>
+<td align="left">Israel</td>
+<td align="right">31</td>
+</tr>
+<tr class="even">
+<td align="left">United Kingdom of Great Britain and Northern Ireland</td>
 <td align="left">United States of America</td>
 <td align="right">24</td>
 </tr>
 <tr class="odd">
 <td align="left">Australia</td>
 <td align="left">United States of America</td>
-<td align="right">22</td>
+<td align="right">20</td>
 </tr>
 <tr class="even">
 <td align="left">India</td>
@@ -401,12 +401,12 @@ world_map &lt;-<span class="st"> </span><span class="kw">tidy</span>(<span class
 <tr class="odd">
 <td align="left">Mexico</td>
 <td align="left">United States of America</td>
-<td align="right">19</td>
+<td align="right">20</td>
 </tr>
 <tr class="even">
-<td align="left">United Kingdom of Great Britain and Northern Ireland</td>
-<td align="left">Israel</td>
-<td align="right">17</td>
+<td align="left">Germany</td>
+<td align="left">United States of America</td>
+<td align="right">14</td>
 </tr>
 </tbody>
 </table>
@@ -416,7 +416,7 @@ world_map &lt;-<span class="st"> </span><span class="kw">tidy</span>(<span class
 <div id="most-active-in-last-30-days" class="section level2">
 <h2><span class="header-section-number">2.4</span> Most Active in Last 30 Days</h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">event_summary &lt;-<span class="st"> </span><span class="kw">get_event_summary</span>(events, country_centroids, <span class="dt">period =</span> <span class="dv">30</span>)</code></pre></div>
-<pre><code>## Warning in countrycode(c(&quot;AFG&quot;, &quot;ARE&quot;, &quot;ARM&quot;, &quot;AUS&quot;, &quot;AZE&quot;, &quot;BEL&quot;, &quot;BGR&quot;, : Some values were not matched unambiguously: HKG, PSE, SRB</code></pre>
+<pre><code>## Warning in countrycode(c(&quot;AFG&quot;, &quot;ARE&quot;, &quot;ARM&quot;, &quot;AUS&quot;, &quot;AZE&quot;, &quot;BEL&quot;, &quot;BGD&quot;, : Some values were not matched unambiguously: HKG, PSE, SRB</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">show_top10</span>(<span class="kw">select</span>(event_summary$nodes, CountryName, EventCount))</code></pre></div>
 <table>
 <thead>
@@ -428,43 +428,43 @@ world_map &lt;-<span class="st"> </span><span class="kw">tidy</span>(<span class
 <tbody>
 <tr class="odd">
 <td align="left">United States</td>
-<td align="right">2167</td>
+<td align="right">2189</td>
 </tr>
 <tr class="even">
 <td align="left">United Kingdom</td>
-<td align="right">407</td>
+<td align="right">420</td>
 </tr>
 <tr class="odd">
 <td align="left">Russian Federation</td>
-<td align="right">404</td>
+<td align="right">418</td>
 </tr>
 <tr class="even">
 <td align="left">Israel</td>
-<td align="right">243</td>
+<td align="right">266</td>
 </tr>
 <tr class="odd">
 <td align="left">Germany</td>
-<td align="right">236</td>
+<td align="right">245</td>
 </tr>
 <tr class="even">
 <td align="left">Iran, Islamic Republic of</td>
-<td align="right">197</td>
+<td align="right">207</td>
 </tr>
 <tr class="odd">
-<td align="left">China</td>
-<td align="right">186</td>
+<td align="left">India</td>
+<td align="right">182</td>
 </tr>
 <tr class="even">
-<td align="left">India</td>
-<td align="right">177</td>
+<td align="left">China</td>
+<td align="right">181</td>
 </tr>
 <tr class="odd">
 <td align="left">Mexico</td>
-<td align="right">161</td>
+<td align="right">163</td>
 </tr>
 <tr class="even">
 <td align="left">Turkey</td>
-<td align="right">143</td>
+<td align="right">138</td>
 </tr>
 </tbody>
 </table>
@@ -481,52 +481,52 @@ world_map &lt;-<span class="st"> </span><span class="kw">tidy</span>(<span class
 <tr class="odd">
 <td align="left">Russian Federation</td>
 <td align="left">United States of America</td>
-<td align="right">224</td>
+<td align="right">227</td>
 </tr>
 <tr class="even">
 <td align="left">United Kingdom of Great Britain and Northern Ireland</td>
 <td align="left">United States of America</td>
-<td align="right">188</td>
+<td align="right">189</td>
 </tr>
 <tr class="odd">
 <td align="left">Israel</td>
 <td align="left">United States of America</td>
-<td align="right">152</td>
+<td align="right">155</td>
 </tr>
 <tr class="even">
 <td align="left">Mexico</td>
 <td align="left">United States of America</td>
-<td align="right">111</td>
+<td align="right">112</td>
 </tr>
 <tr class="odd">
 <td align="left">Iran (Islamic Republic of)</td>
 <td align="left">United States of America</td>
-<td align="right">109</td>
+<td align="right">110</td>
 </tr>
 <tr class="even">
 <td align="left">India</td>
 <td align="left">United States of America</td>
-<td align="right">78</td>
+<td align="right">80</td>
 </tr>
 <tr class="odd">
 <td align="left">Germany</td>
 <td align="left">United States of America</td>
-<td align="right">54</td>
+<td align="right">56</td>
+</tr>
+<tr class="even">
+<td align="left">Germany</td>
+<td align="left">Turkey</td>
+<td align="right">45</td>
+</tr>
+<tr class="odd">
+<td align="left">United Kingdom of Great Britain and Northern Ireland</td>
+<td align="left">Israel</td>
+<td align="right">45</td>
 </tr>
 <tr class="even">
 <td align="left">Germany</td>
 <td align="left">France</td>
 <td align="right">44</td>
-</tr>
-<tr class="odd">
-<td align="left">Germany</td>
-<td align="left">Turkey</td>
-<td align="right">41</td>
-</tr>
-<tr class="even">
-<td align="left">United Kingdom of Great Britain and Northern Ireland</td>
-<td align="left">Turkey</td>
-<td align="right">40</td>
 </tr>
 </tbody>
 </table>

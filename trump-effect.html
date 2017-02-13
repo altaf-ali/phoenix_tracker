@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
+<link rel="prev" href="event-table.html">
 
-<link rel="next" href="activity.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -136,78 +136,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Phoenix Tracker</h1>
-</div>
-<div id="introduction" class="section level1">
-<h1><span class="header-section-number">1</span> Introduction</h1>
-<p>This project analyzes event data from the <a href="http://phoenixdata.org">Phoenix Data Project</a></p>
-<div id="getting-started" class="section level2">
-<h2><span class="header-section-number">1.1</span> Getting Started</h2>
-<p>Load the necessary packages.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(plyr)
-<span class="kw">library</span>(yaml)
-<span class="kw">library</span>(tidyverse)</code></pre></div>
-</div>
-<div id="loading-dataset" class="section level2">
-<h2><span class="header-section-number">1.2</span> Loading Dataset</h2>
-<p>The <code>phoenix.R</code> script provides a function that simplifies downloading and loading the dataset. We set the start date to the beginning of the year and load the dataset. The <code>phoenix_load()</code> function downloads the dataset if necessary.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">source</span>(<span class="st">&#39;R/phoenix.R&#39;</span>)
+<div id="trump-effect" class="section level1">
+<h1><span class="header-section-number">4</span> Trump Effect</h1>
+<p><img src="_main_files/figure-html/unnamed-chunk-21-1.png" width="768" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-22-1.png" width="768" /></p>
 
-config &lt;-<span class="st"> </span><span class="kw">yaml.load_file</span>(<span class="st">&quot;config.yml&quot;</span>)
-events &lt;-<span class="st"> </span><span class="kw">phoenix_load</span>(config, <span class="dt">start_date =</span> <span class="st">&quot;2017-01-01&quot;</span>)</code></pre></div>
-<p>Let’s see what’s in the dataset</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(events)</code></pre></div>
-<pre><code>## &#39;data.frame&#39;:    126256 obs. of  26 variables:
-##  $ EventID             : chr  &quot;2867898_v1.3.0&quot; &quot;2867899_v1.3.0&quot; &quot;2867900_v1.3.0&quot; &quot;2867901_v1.3.0&quot; ...
-##  $ Date                : Date, format: &quot;2017-01-02&quot; &quot;2016-12-23&quot; ...
-##  $ Year                : int  2017 2016 2016 2017 2017 2017 2017 2017 2017 2017 ...
-##  $ Month               : int  1 12 12 1 1 1 1 1 1 1 ...
-##  $ Day                 : int  2 23 29 2 2 2 2 1 1 2 ...
-##  $ SourceActorFull     : chr  &quot;COG&quot; &quot;MNCCHE&quot; &quot;IRN&quot; &quot;DEU&quot; ...
-##  $ SourceActorEntity   : chr  &quot;COG&quot; &quot;MNC&quot; &quot;IRN&quot; &quot;DEU&quot; ...
-##  $ SourceActorRole     : chr  &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; ...
-##  $ SourceActorAttribute: chr  &quot;&quot; &quot;CHE&quot; &quot;&quot; &quot;&quot; ...
-##  $ TargetActorFull     : chr  &quot;MED&quot; &quot;USAGOV&quot; &quot;SYR&quot; &quot;GBR&quot; ...
-##  $ TargetActorEntity   : chr  &quot;&quot; &quot;USA&quot; &quot;SYR&quot; &quot;GBR&quot; ...
-##  $ TargetActorRole     : chr  &quot;&quot; &quot;GOV&quot; &quot;&quot; &quot;&quot; ...
-##  $ TargetActorAttribute: chr  &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; ...
-##  $ EventCode           : chr  &quot;010&quot; &quot;010&quot; &quot;010&quot; &quot;042&quot; ...
-##  $ EventRootCode       : chr  &quot;01&quot; &quot;01&quot; &quot;01&quot; &quot;04&quot; ...
-##  $ PentaClass          : chr  &quot;0&quot; &quot;0&quot; &quot;0&quot; &quot;1&quot; ...
-##  $ GoldsteinScore      : num  0 0 0 1.9 -4.4 1.9 0 1 1.9 0 ...
-##  $ Issues              : chr  &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; ...
-##  $ Lat                 : num  NA 39.8 55.8 51.5 39.9 ...
-##  $ Lon                 : num  NA -98.5 37.616 -0.126 116.397 ...
-##  $ LocationName        : chr  &quot;&quot; &quot;United States&quot; &quot;Moscow&quot; &quot;London&quot; ...
-##  $ StateName           : chr  &quot;&quot; &quot;&quot; &quot;Moskva&quot; &quot;England&quot; ...
-##  $ CountryCode         : chr  &quot;&quot; &quot;USA&quot; &quot;RUS&quot; &quot;GBR&quot; ...
-##  $ SentenceID          : chr  &quot;586a9d7beaae1f0001eec49c_1&quot; &quot;5869ac06dc0402000134e7ef_0&quot; &quot;5869ac72d57de600015a7951_1&quot; &quot;586a3e29172dca00014c31b9_2;586a2f7fe580470001f1b3d6_2;586a36dfc6faa00001190301_3&quot; ...
-##  $ URLs                : chr  &quot;http://www.nation.co.ke/news/africa/DR-Congo-set-for-talks-on-implementing-crisis-deal/1066-3504894-k0ud9b/index.html&quot; &quot;http://www.thelocal.ch/20161223/swiss-bank-to-pay-billions-to-settle-securities-disputes&quot; &quot;http://www.jpost.com/Middle-East/Syrian-army-says-countrywide-ceasefire-to-start-midnight-Thursday-476890&quot; &quot;https://in.news.yahoo.com/china-launches-first-freight-train-london-113004033.html;http://www.shanghaidaily.com/nation/China-la&quot;| __truncated__ ...
-##  $ NewsSources         : chr  &quot;kenya_nation&quot; &quot;local_switzerland&quot; &quot;jpost_me&quot; &quot;yahoo_india;shanghai_national;india_mint_econpol&quot; ...</code></pre>
-<p>Show selected columns</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">events %&gt;%
-<span class="st">  </span><span class="kw">select</span>(Date, SourceActorFull, TargetActorFull, EventCode, LocationName) %&gt;%
-<span class="st">  </span><span class="kw">head</span>()</code></pre></div>
-<pre><code>##         Date SourceActorFull TargetActorFull EventCode  LocationName
-## 1 2017-01-02             COG             MED       010              
-## 2 2016-12-23          MNCCHE          USAGOV       010 United States
-## 3 2016-12-29             IRN             SYR       010        Moscow
-## 4 2017-01-02             DEU             GBR       042        London
-## 5 2017-01-02             CHN             HKG       130       Beijing
-## 6 2017-01-02       USAELIGOV          USAGOV       042</code></pre>
-<hr />
-<p><em>Last Updated: Feb 13, 2017 8:40 AM</em></p>
-
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
+<a href="event-table.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="activity.html" class="navigation navigation-next navigation-unique" aria-label="Next page""><i class="fa fa-angle-right"></i></a>
 
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>

@@ -4,6 +4,7 @@
 
 ## Getting Started
 
+- Open `phoenix_tracker.Rproj` in RStudio.
 - Run `R/setup.R` to ensure that you have the necessary packages installed.
 - Use `Build All` command in RStudio to build the project.
 

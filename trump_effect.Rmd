@@ -1,0 +1,118 @@
+# Trump Effect
+
+```{r message = FALSE, echo = FALSE}
+library(plyr)
+library(countrycode)
+library(tidyverse)
+library(lubridate)
+library(yaml)
+```
+
+```{r message=FALSE, results='hide', echo = FALSE}
+source('R/phoenix.R')
+
+config <- yaml.load_file("config.yml")
+events <- phoenix_load(config, "2017-01-01")
+```
+
+
+```{r echo = FALSE}
+get_event_summary <- function(events, start_date, period = 0, event_threshold = 0) {
+  PentaClass_Cooperation <- 0:2
+  PentaClass_Conflict <- 3:4
+
+  end_date <- start_date + period
+  date_range <- sort(seq(start_date, end_date, length.out = abs(period) +1))
+
+  edges <- events %>%
+    filter(SourceActorRole == "GOV" & TargetActorRole == "GOV") %>%
+    select(Date, A = SourceActorEntity, B = TargetActorEntity, PentaClass) %>%
+    filter(A != B, !is.na(A), !(A == ""), !is.na(B), !(B == "")) %>%
+    filter(Date %in% date_range) %>%
+    rowwise() %>%
+    mutate(Dyad = paste(sort(c(A, B)), collapse = "-")) %>%
+    ungroup() %>%
+    separate(Dyad, c("SideA", "SideB"), "-", remove = FALSE)
+
+  nodes <- edges %>%
+    gather(Type, Node, SideA, SideB) %>%
+    group_by(Node) %>%
+    summarize(EventCount = n()) %>%
+    ungroup() %>%
+    filter(EventCount > event_threshold) %>%
+    mutate(Country = countrycode(Node, "iso3c", "country.name"), ID = row_number()) %>%
+    select(Node, Country, ID, EventCount)
+
+  edges <- edges %>%
+    inner_join(nodes, by = c("SideA" = "Node")) %>%
+    select(SideA, SideA_ID = ID, SideB, PentaClass) %>%
+    inner_join(nodes, by = c("SideB" = "Node")) %>%
+    select(SideA, SideA_ID, SideB, SideB_ID = ID, PentaClass) %>%
+    mutate(A = pmax(SideA_ID, SideB_ID),
+           B = pmin(SideA_ID, SideB_ID)) %>%
+    group_by(A, B, SideA, SideA_ID, SideB, SideB_ID) %>%
+    summarize(EventCount = n(),
+              EventCount_Conflict = sum(PentaClass %in% PentaClass_Conflict),
+              EventCount_Cooperation = sum(PentaClass %in% PentaClass_Cooperation)) %>%
+    ungroup()
+
+  list(nodes = nodes, edges = edges, date_range = range(date_range))
+}
+```
+
+```{r echo = FALSE}
+plot_arc_diagram <- function(event_summary, title) {
+  y_offset <- 1
+  curvature <- 0.7
+
+  ggplot(event_summary$nodes) +
+    ggtitle(title,
+            paste(format(first(event_summary$date_range), "%b %d, %Y"),
+                  "-",
+                  format(last(event_summary$date_range), "%b %d, %Y"))) +
+    geom_text(aes(x = ID, y = 0, label = Node), angle = 90) +
+    geom_curve(aes(x = A,
+                   y = y_offset,
+                   xend = B,
+                   yend = y_offset,
+                   size = EventCount_Cooperation,
+                   alpha = EventCount_Cooperation),
+               color = "darkgreen",
+               data = filter(event_summary$edges, EventCount_Cooperation > 0),
+               ncp = 1000, curvature = curvature, lineend = "butt") +
+    geom_curve(aes(x = A,
+                   y = -y_offset,
+                   xend = B,
+                   yend = -y_offset,
+                   size = EventCount_Conflict,
+                   alpha = EventCount_Conflict),
+               color = "darkred",
+               data = filter(event_summary$edges, EventCount_Conflict > 0),
+               ncp = 1000, curvature = -curvature, lineend = "butt") +
+    ylim(-10, 10) +
+    theme_minimal() +
+    theme(
+      axis.text = element_blank(),
+      axis.title = element_blank(),
+      panel.grid = element_blank(),
+      legend.position="none",
+      plot.title = element_text(face = "bold", hjust = 0.5),
+      plot.subtitle = element_text(hjust = 0.5)
+    )
+}
+```
+
+```{r echo = FALSE}
+inauguration <- as.Date("2017-01-20")
+days_since_inauguration <- as.numeric(max(events$Date) - inauguration)
+```
+
+```{r fig.width=8, fig.height=6.5, echo = FALSE}
+obama_events <- get_event_summary(events, inauguration-1, -days_since_inauguration, event_threshold = 10)
+plot_arc_diagram(obama_events, sprintf("Obama's Last %d Days", days_since_inauguration))
+```
+
+```{r fig.width=8, fig.height=6.5, echo = FALSE}
+trump_events <- get_event_summary(events, inauguration, days_since_inauguration, event_threshold = 10)
+plot_arc_diagram(trump_events, sprintf("Trump's First %d Days", days_since_inauguration))
+```

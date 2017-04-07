@@ -155,6 +155,7 @@ config &lt;-<span class="st"> </span><span class="kw">yaml.load_file</span>(<spa
 events &lt;-<span class="st"> </span><span class="kw">phoenix_load</span>(config, <span class="st">&quot;2017-01-01&quot;</span>)
 country_centroids &lt;-<span class="st"> </span><span class="kw">read_csv</span>(config$google$centroids)
 world_map &lt;-<span class="st"> </span><span class="kw">tidy</span>(<span class="kw">cshp</span>(<span class="kw">as.Date</span>(<span class="st">&quot;2016-06-30&quot;</span>)), <span class="dt">region =</span> <span class="st">&quot;COWCODE&quot;</span>)</code></pre></div>
+<pre><code>## Warning: use rgdal::readOGR or sf::st_read</code></pre>
 <p>Function for summarizing events. Return value contains a list of nodes and edges reprensenting dyadic events.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">get_event_summary &lt;-<span class="st"> </span>function(events, centroids, <span class="dt">period =</span> <span class="dv">0</span>) {
   events &lt;-<span class="st"> </span>events %&gt;%

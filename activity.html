@@ -110,7 +110,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="2" data-path="activity.html"><a href="activity.html"><i class="fa fa-check"></i><b>2</b> Activity</a><ul>
 <li class="chapter" data-level="2.1" data-path="activity.html"><a href="activity.html#loading-dataset-1"><i class="fa fa-check"></i><b>2.1</b> Loading Dataset</a></li>
-<li class="chapter" data-level="2.2" data-path="activity.html"><a href="activity.html#most-active-on-2017-04-10"><i class="fa fa-check"></i><b>2.2</b> Most Active on 2017-04-10</a></li>
+<li class="chapter" data-level="2.2" data-path="activity.html"><a href="activity.html#most-active-on-2017-04-11"><i class="fa fa-check"></i><b>2.2</b> Most Active on 2017-04-11</a></li>
 <li class="chapter" data-level="2.3" data-path="activity.html"><a href="activity.html#most-active-in-last-7-days"><i class="fa fa-check"></i><b>2.3</b> Most Active in Last 7 Days</a></li>
 <li class="chapter" data-level="2.4" data-path="activity.html"><a href="activity.html#most-active-in-last-30-days"><i class="fa fa-check"></i><b>2.4</b> Most Active in Last 30 Days</a></li>
 </ul></li>
@@ -235,8 +235,8 @@ world_map &lt;-<span class="st"> </span><span class="kw">tidy</span>(<span class
 <span class="st">    </span>knitr::<span class="kw">kable</span>()
 }</code></pre></div>
 </div>
-<div id="most-active-on-2017-04-10" class="section level2">
-<h2><span class="header-section-number">2.2</span> Most Active on 2017-04-10</h2>
+<div id="most-active-on-2017-04-11" class="section level2">
+<h2><span class="header-section-number">2.2</span> Most Active on 2017-04-11</h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">event_summary &lt;-<span class="st"> </span><span class="kw">get_event_summary</span>(events, country_centroids)
 <span class="kw">show_top10</span>(<span class="kw">select</span>(event_summary$nodes, CountryName, EventCount))</code></pre></div>
 <table>
@@ -252,10 +252,14 @@ world_map &lt;-<span class="st"> </span><span class="kw">tidy</span>(<span class
 <td align="right">2</td>
 </tr>
 <tr class="even">
-<td align="left">United Kingdom</td>
-<td align="right">1</td>
+<td align="left">United States</td>
+<td align="right">2</td>
 </tr>
 <tr class="odd">
+<td align="left">Germany</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
 <td align="left">Iran, Islamic Republic of</td>
 <td align="right">1</td>
 </tr>
@@ -272,13 +276,18 @@ world_map &lt;-<span class="st"> </span><span class="kw">tidy</span>(<span class
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">United Kingdom of Great Britain and Northern Ireland</td>
+<td align="left">Germany</td>
 <td align="left">Syrian Arab Republic</td>
 <td align="right">1</td>
 </tr>
 <tr class="even">
 <td align="left">Iran (Islamic Republic of)</td>
+<td align="left">United States of America</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
 <td align="left">Syrian Arab Republic</td>
+<td align="left">United States of America</td>
 <td align="right">1</td>
 </tr>
 </tbody>
@@ -301,43 +310,43 @@ world_map &lt;-<span class="st"> </span><span class="kw">tidy</span>(<span class
 <tbody>
 <tr class="odd">
 <td align="left">United States</td>
-<td align="right">176</td>
+<td align="right">192</td>
 </tr>
 <tr class="even">
 <td align="left">Syrian Arab Republic</td>
-<td align="right">64</td>
+<td align="right">96</td>
 </tr>
 <tr class="odd">
 <td align="left">China</td>
-<td align="right">44</td>
+<td align="right">55</td>
 </tr>
 <tr class="even">
 <td align="left">Russian Federation</td>
-<td align="right">42</td>
+<td align="right">49</td>
 </tr>
 <tr class="odd">
-<td align="left">United Kingdom</td>
-<td align="right">22</td>
+<td align="left">Iran, Islamic Republic of</td>
+<td align="right">34</td>
 </tr>
 <tr class="even">
-<td align="left">Iran, Islamic Republic of</td>
-<td align="right">20</td>
+<td align="left">United Kingdom</td>
+<td align="right">30</td>
 </tr>
 <tr class="odd">
 <td align="left">India</td>
-<td align="right">18</td>
+<td align="right">19</td>
 </tr>
 <tr class="even">
 <td align="left">Germany</td>
-<td align="right">14</td>
+<td align="right">16</td>
 </tr>
 <tr class="odd">
-<td align="left">Turkey</td>
-<td align="right">14</td>
+<td align="left">France</td>
+<td align="right">16</td>
 </tr>
 <tr class="even">
 <td align="left">Israel</td>
-<td align="right">10</td>
+<td align="right">15</td>
 </tr>
 </tbody>
 </table>
@@ -354,52 +363,52 @@ world_map &lt;-<span class="st"> </span><span class="kw">tidy</span>(<span class
 <tr class="odd">
 <td align="left">China</td>
 <td align="left">United States of America</td>
-<td align="right">31</td>
+<td align="right">33</td>
 </tr>
 <tr class="even">
 <td align="left">Syrian Arab Republic</td>
 <td align="left">United States of America</td>
-<td align="right">20</td>
-</tr>
-<tr class="odd">
-<td align="left">Russian Federation</td>
-<td align="left">United States of America</td>
-<td align="right">15</td>
-</tr>
-<tr class="even">
-<td align="left">India</td>
-<td align="left">United States of America</td>
-<td align="right">13</td>
+<td align="right">30</td>
 </tr>
 <tr class="odd">
 <td align="left">United Kingdom of Great Britain and Northern Ireland</td>
 <td align="left">Syrian Arab Republic</td>
-<td align="right">10</td>
-</tr>
-<tr class="even">
-<td align="left">United Kingdom of Great Britain and Northern Ireland</td>
-<td align="left">Poland</td>
-<td align="right">8</td>
-</tr>
-<tr class="odd">
-<td align="left">Russian Federation</td>
-<td align="left">Syrian Arab Republic</td>
-<td align="right">8</td>
+<td align="right">14</td>
 </tr>
 <tr class="even">
 <td align="left">Iran (Islamic Republic of)</td>
-<td align="left">United States of America</td>
-<td align="right">7</td>
+<td align="left">Syrian Arab Republic</td>
+<td align="right">13</td>
 </tr>
 <tr class="odd">
-<td align="left">Syrian Arab Republic</td>
-<td align="left">Turkey</td>
-<td align="right">7</td>
+<td align="left">Russian Federation</td>
+<td align="left">United States of America</td>
+<td align="right">13</td>
 </tr>
 <tr class="even">
-<td align="left">Egypt</td>
+<td align="left">Russian Federation</td>
+<td align="left">Syrian Arab Republic</td>
+<td align="right">11</td>
+</tr>
+<tr class="odd">
+<td align="left">India</td>
 <td align="left">United States of America</td>
-<td align="right">5</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="left">Germany</td>
+<td align="left">France</td>
+<td align="right">9</td>
+</tr>
+<tr class="odd">
+<td align="left">Iran (Islamic Republic of)</td>
+<td align="left">United States of America</td>
+<td align="right">9</td>
+</tr>
+<tr class="even">
+<td align="left">Syrian Arab Republic</td>
+<td align="left">Turkey</td>
+<td align="right">8</td>
 </tr>
 </tbody>
 </table>
@@ -421,42 +430,42 @@ world_map &lt;-<span class="st"> </span><span class="kw">tidy</span>(<span class
 <tbody>
 <tr class="odd">
 <td align="left">United States</td>
-<td align="right">747</td>
+<td align="right">764</td>
 </tr>
 <tr class="even">
 <td align="left">Germany</td>
-<td align="right">229</td>
+<td align="right">230</td>
 </tr>
 <tr class="odd">
 <td align="left">Turkey</td>
-<td align="right">223</td>
+<td align="right">193</td>
 </tr>
 <tr class="even">
 <td align="left">Russian Federation</td>
-<td align="right">203</td>
+<td align="right">187</td>
 </tr>
 <tr class="odd">
 <td align="left">China</td>
-<td align="right">139</td>
+<td align="right">149</td>
 </tr>
 <tr class="even">
 <td align="left">United Kingdom</td>
-<td align="right">117</td>
-</tr>
-<tr class="odd">
-<td align="left">Netherlands</td>
-<td align="right">88</td>
-</tr>
-<tr class="even">
-<td align="left">Iran, Islamic Republic of</td>
-<td align="right">81</td>
+<td align="right">124</td>
 </tr>
 <tr class="odd">
 <td align="left">Syrian Arab Republic</td>
-<td align="right">78</td>
+<td align="right">104</td>
 </tr>
 <tr class="even">
-<td align="left">Israel</td>
+<td align="left">Iran, Islamic Republic of</td>
+<td align="right">96</td>
+</tr>
+<tr class="odd">
+<td align="left">Netherlands</td>
+<td align="right">71</td>
+</tr>
+<tr class="even">
+<td align="left">India</td>
 <td align="right">62</td>
 </tr>
 </tbody>
@@ -472,44 +481,44 @@ world_map &lt;-<span class="st"> </span><span class="kw">tidy</span>(<span class
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Netherlands</td>
-<td align="left">Turkey</td>
-<td align="right">80</td>
-</tr>
-<tr class="even">
-<td align="left">Germany</td>
-<td align="left">United States of America</td>
-<td align="right">78</td>
-</tr>
-<tr class="odd">
 <td align="left">Germany</td>
 <td align="left">Turkey</td>
 <td align="right">72</td>
 </tr>
 <tr class="even">
-<td align="left">Russian Federation</td>
+<td align="left">Germany</td>
 <td align="left">United States of America</td>
-<td align="right">65</td>
+<td align="right">72</td>
 </tr>
 <tr class="odd">
 <td align="left">China</td>
 <td align="left">United States of America</td>
-<td align="right">62</td>
+<td align="right">66</td>
+</tr>
+<tr class="even">
+<td align="left">Russian Federation</td>
+<td align="left">United States of America</td>
+<td align="right">64</td>
+</tr>
+<tr class="odd">
+<td align="left">Netherlands</td>
+<td align="left">Turkey</td>
+<td align="right">63</td>
 </tr>
 <tr class="even">
 <td align="left">Iran (Islamic Republic of)</td>
 <td align="left">United States of America</td>
-<td align="right">39</td>
+<td align="right">40</td>
 </tr>
 <tr class="odd">
-<td align="left">India</td>
-<td align="left">United States of America</td>
-<td align="right">34</td>
-</tr>
-<tr class="even">
 <td align="left">Syrian Arab Republic</td>
 <td align="left">United States of America</td>
-<td align="right">29</td>
+<td align="right">37</td>
+</tr>
+<tr class="even">
+<td align="left">India</td>
+<td align="left">United States of America</td>
+<td align="right">35</td>
 </tr>
 <tr class="odd">
 <td align="left">United Kingdom of Great Britain and Northern Ireland</td>
@@ -517,9 +526,9 @@ world_map &lt;-<span class="st"> </span><span class="kw">tidy</span>(<span class
 <td align="right">27</td>
 </tr>
 <tr class="even">
-<td align="left">Russian Federation</td>
-<td align="left">Turkey</td>
-<td align="right">25</td>
+<td align="left">Israel</td>
+<td align="left">United States of America</td>
+<td align="right">21</td>
 </tr>
 </tbody>
 </table>

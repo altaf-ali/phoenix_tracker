@@ -110,7 +110,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="2" data-path="activity.html"><a href="activity.html"><i class="fa fa-check"></i><b>2</b> Activity</a><ul>
 <li class="chapter" data-level="2.1" data-path="activity.html"><a href="activity.html#loading-dataset-1"><i class="fa fa-check"></i><b>2.1</b> Loading Dataset</a></li>
-<li class="chapter" data-level="2.2" data-path="activity.html"><a href="activity.html#most-active-on-2017-04-25"><i class="fa fa-check"></i><b>2.2</b> Most Active on 2017-04-25</a></li>
+<li class="chapter" data-level="2.2" data-path="activity.html"><a href="activity.html#most-active-on-2017-04-26"><i class="fa fa-check"></i><b>2.2</b> Most Active on 2017-04-26</a></li>
 <li class="chapter" data-level="2.3" data-path="activity.html"><a href="activity.html#most-active-in-last-7-days"><i class="fa fa-check"></i><b>2.3</b> Most Active in Last 7 Days</a></li>
 <li class="chapter" data-level="2.4" data-path="activity.html"><a href="activity.html#most-active-in-last-30-days"><i class="fa fa-check"></i><b>2.4</b> Most Active in Last 30 Days</a></li>
 </ul></li>
@@ -158,7 +158,7 @@ config &lt;-<span class="st"> </span><span class="kw">yaml.load_file</span>(<spa
 events &lt;-<span class="st"> </span><span class="kw">phoenix_load</span>(config, <span class="dt">start_date =</span> <span class="st">&quot;2017-01-01&quot;</span>)</code></pre></div>
 <p>Let’s see what’s in the dataset</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(events)</code></pre></div>
-<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    248398 obs. of  26 variables:
+<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    251456 obs. of  26 variables:
 ##  $ EventID             : chr  &quot;2867898_v1.3.0&quot; &quot;2867899_v1.3.0&quot; &quot;2867900_v1.3.0&quot; &quot;2867901_v1.3.0&quot; ...
 ##  $ Date                : Date, format: &quot;2017-01-02&quot; &quot;2016-12-23&quot; ...
 ##  $ Year                : int  2017 2016 2016 2017 2017 2017 2017 2017 2017 2017 ...
@@ -183,7 +183,7 @@ events &lt;-<span class="st"> </span><span class="kw">phoenix_load</span>(config
 ##  $ StateName           : chr  &quot;&quot; &quot;&quot; &quot;Moskva&quot; &quot;England&quot; ...
 ##  $ CountryCode         : chr  &quot;&quot; &quot;USA&quot; &quot;RUS&quot; &quot;GBR&quot; ...
 ##  $ SentenceID          : chr  &quot;586a9d7beaae1f0001eec49c_1&quot; &quot;5869ac06dc0402000134e7ef_0&quot; &quot;5869ac72d57de600015a7951_1&quot; &quot;586a3e29172dca00014c31b9_2;586a2f7fe580470001f1b3d6_2;586a36dfc6faa00001190301_3&quot; ...
-##  $ URLs                : chr  &quot;http://www.nation.co.ke/news/africa/DR-Congo-set-for-talks-on-implementing-crisis-deal/1066-3504894-k0ud9b/index.html&quot; &quot;http://www.thelocal.ch/20161223/swiss-bank-to-pay-billions-to-settle-securities-disputes&quot; &quot;http://www.jpost.com/Middle-East/Syrian-army-says-countrywide-ceasefire-to-start-midnight-Thursday-476890&quot; &quot;https://in.news.yahoo.com/china-launches-first-freight-train-london-113004033.html;http://www.shanghaidaily.com/nation/China-la&quot;| __truncated__ ...
+##  $ URLs                : chr  &quot;http://www.nation.co.ke/news/africa/DR-Congo-set-for-talks-on-implementing-crisis-deal/1066-3504894-k0ud9b/index.html&quot; &quot;http://www.thelocal.ch/20161223/swiss-bank-to-pay-billions-to-settle-securities-disputes&quot; &quot;http://www.jpost.com/Middle-East/Syrian-army-says-countrywide-ceasefire-to-start-midnight-Thursday-476890&quot; &quot;https://in.news.yahoo.com/china-launches-first-freight-train-london-113004033.html;http://www.shanghaidaily.com&quot;| __truncated__ ...
 ##  $ NewsSources         : chr  &quot;kenya_nation&quot; &quot;local_switzerland&quot; &quot;jpost_me&quot; &quot;yahoo_india;shanghai_national;india_mint_econpol&quot; ...</code></pre>
 <p>Show selected columns</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">events %&gt;%
@@ -199,7 +199,7 @@ events &lt;-<span class="st"> </span><span class="kw">phoenix_load</span>(config
 ## 5 2017-01-02             CHN             HKG       130       Beijing
 ## 6 2017-01-02       USAELIGOV          USAGOV       042</code></pre>
 <hr />
-<p><em>Last Updated: Apr 25, 2017 2:21 AM</em></p>
+<p><em>Last Updated: Apr 26, 2017 2:36 AM</em></p>
 
 </div>
 </div>
